@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verde — 3D Generalist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <a href="#" class="nav-logo">Daniel Cal</a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#portfolio" id="nav-portfolio">Portfolio</a></li>
+          <li><a href="#about" id="nav-about">About</a></li>
+          <li><a href="#process" id="nav-process">Process</a></li>
+          <li><a href="#contact" id="nav-contact">Contact</a></li>
+        </ul>
+        <button class="lang-btn" onclick="toggleLang()" id="lang-btn">
+          <span class="lang-flag" id="lang-flag">🇪🇸</span>
+          <span id="lang-label">ES</span>
+        </button>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="hero-carousel" id="hero-carousel"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <br /><span></span><br />
+        </h1>
+        <p class="hero-desc" id="hero-desc">
+          19 years turning ideas into visual reality. Specialised in archviz and simulators.
+        </p>
+        <a href="#portfolio" class="hero-cta" id="hero-cta"
+          >View portfolio &rarr;</a
+        >
+      </div>
+      <div class="hero-dots" id="hero-dots"></div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">19</div>
+          <div class="stat-label" id="stat1">Years of experience</div>
+        </div>
+        <div>
+          <div class="stat-num">+200</div>
+          <div class="stat-label" id="stat2">Completed projects</div>
+        </div>
+        <div>
+          <div class="stat-num">3</div>
+          <div class="stat-label" id="stat3">Main sectors</div>
+        </div>
+      </div>
+    </section>
+    <section id="portfolio">
+      <div class="section-header reveal">
+        <span class="section-label" id="portfolio-label">Work</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-title reveal" id="portfolio-title">
+        Selected projects
+      </h2>
+      <div class="filter-bar reveal">
+        <button
+          class="filter-btn active"
+          onclick="filterProjects('all', this)"
+          id="f-all"
+        >
+          All
+        </button>
+        <button
+          class="filter-btn"
+          onclick="filterProjects('archviz', this)"
+          id="f-archviz"
+        >
+          Archviz
+        </button>
+        <button
+          class="filter-btn"
+          onclick="filterProjects('simulation', this)"
+          id="f-simulation"
+        >
+          Simulation
+        </button>
+        <button
+          class="filter-btn"
+          onclick="filterProjects('motorsport', this)"
+          id="f-motorsport"
+        >
+          Motorsport
+        </button>
+      </div>
+      <div class="portfolio-grid" id="portfolio-grid">
+        <div
+          class="portfolio-item featured"
+          data-featured="true"
+          data-cat="archviz"
+          data-title-en="Overpass Renders"
+          data-title-es="Overpass Renders"
+          onclick="openLightbox('archviz_Overpass')"
+        >
+          <img
+            src="images/dcal_rotonda_aerial.jpg"
+            alt="Overpass Renders"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center center;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">Overpass Renders</div>
+            <div class="project-cat">
+              Archviz · Blender · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">6 images</span>
+            </div>
+            <div class="project-sub">
+              Overpass for cyclists and pedestrians linking Sueca and Fortaleny
+              (Valencia, Spain).
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item"
+          data-cat="motorsport"
+          data-title-en="Nismo GTR GT500 2018"
+          data-title-es="Nismo GTR GT500 2018"
+          onclick="openLightbox('motorsport_GTR')"
+        >
+          <img
+            src="images/dcal_nismo_09.jpg"
+            alt="Nismo GTR GT500 2018"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center bottom;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">Nismo GTR GT500 2018</div>
+            <div class="project-cat">
+              Motorsport · Blender · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">10 images</span>
+            </div>
+            <div class="project-sub">
+              Nismo GT-R GT500. 47k triangles including cockpit, wheels and
+              steering wheel.
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item featured"
+          data-featured="true"
+          data-cat="simulation"
+          data-title-en="Simulator Scenarios"
+          data-title-es="Escenarios Simulación"
+          onclick="openLightbox('simulation_Cargo')"
+        >
+          <img
+            src="images/dcal_cargo_8.jpg"
+            alt="Cargo Ships"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center center;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">Cargo Ships</div>
+            <div class="project-cat">
+              Simulation · Blender · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">6 images</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item featured"
+          data-featured="true"
+          data-cat="motorsport"
+          data-title-en="Formula 2"
+          data-title-es="Formula 2"
+          onclick="openLightbox('motorsport_F2')"
+        >
+          <img
+            src="images/dcal_formula2_front.jpg"
+            alt="Formula 2"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center center;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">Formula 2</div>
+            <div class="project-cat">
+              Motorsport · Blender · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">5 images</span>
+            </div>
+            <div class="project-sub">
+              Formula 2 2020. 39k triangles including chassis, cockpit, wheels
+              and steering wheel.
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item"
+          data-cat="archviz"
+          data-title-en="Main Street Renovation"
+          data-title-es="Renovación Calle Mayor"
+          onclick="openLightbox('archviz_MainStr')"
+        >
+          <img
+            src="images/dcal_alborache_bus_slider.jpg"
+            alt="Main Street Renovation"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center bottom;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">Main Street Renovation</div>
+            <div class="project-cat">
+              Archviz · Before/After · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">4 images</span>
+            </div>
+            <div class="project-sub">
+              Main street renovation previsualization. Location: Alborache
+              (Valencia, Spain).
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item"
+          data-cat="archviz"
+          data-title-en="Town Square Renovation"
+          data-title-es="Renovación Calle Mayor"
+          onclick="openLightbox('archviz_MainStr')"
+        >
+          <img
+            src="images/dcal_otos-actuacion-01.jpg"
+            alt="Main Street Renovation"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center bottom;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">Main Street Renovation</div>
+            <div class="project-cat">
+              Archviz · Before/After · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">4 images</span>
+            </div>
+            <div class="project-sub">
+              Main street renovation previsualization. Location: Alborache
+              (Valencia, Spain).
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item featured"
+          data-featured="true"
+          data-cat="simulation"
+          data-title-en="Cargo Ships"
+          data-title-es="Cargo Ships"
+          onclick="openLightbox('simulation_Cargo')"
+        >
+          <img
+            src="images/dcal_cargo_3.jpg"
+            alt="Cargo Ships"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center center;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">Cargo Ships</div>
+            <div class="project-cat">
+              Simulation · Blender · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">6 images</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item"
+          data-featured="true"
+          data-cat="archviz"
+          data-title-en="Main Road Renovation"
+          data-title-es="Renovación Carretera Principal"
+          onclick="openLightbox('archviz_MainRd')"
+        >
+          <img
+            src="images/dcal_VdA-after.jpg"
+            alt="Main Street Renovation"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center bottom;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">Main Street Renovation</div>
+            <div class="project-cat">
+              Archviz · Before/After · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">4 images</span>
+            </div>
+            <div class="project-sub">
+              Main road renovation previsualization. Location: Alborache
+              (Valencia, Spain).
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item"
+          data-cat="motorsport"
+          data-title-en="STC 2000 2019"
+          data-title-es="STC 2000 2019"
+          onclick="openLightbox('motorsport_STC')"
+        >
+          <img
+            src="images/dcal_stc2000-render-front-left-02.jpg"
+            alt="STC 2000 2019"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center center;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">STC 2000 2019</div>
+            <div class="project-cat">
+              Motorsport · Blender · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">6 images</span>
+            </div>
+            <div class="project-sub">
+              STC 2000 Toyota 2019 model. 32k triangles including cockpit,
+              wheels and steering wheel.
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item"
+          data-cat="motorsport"
+          data-title-en="Super Formula 2019"
+          data-title-es="Super Formula 2019"
+          onclick="openLightbox('motorsport_SF')"
+        >
+          <img
+            src="images/dcal_superformula_front_4545.jpg"
+            alt="Super Formula 2019"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center center;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">Super Formula 2019</div>
+            <div class="project-cat">
+              Motorsport · Blender · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">6 images</span>
+            </div>
+            <div class="project-sub">
+              Super Formula 2019 model. 34k triangles including cockpit, wheels
+              and steering wheel.
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item"
+          data-cat="motorsport"
+          data-title-en="NASCAR 2019"
+          data-title-es="NASCAR 2019"
+          onclick="openLightbox('motorsport_NSC')"
+        >
+          <img
+            src="images/dcal_nascar_front.jpg"
+            alt="NASCAR 2019"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center center;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">NASCAR 2019</div>
+            <div class="project-cat">
+              Motorsport · Blender · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">5 images</span>
+            </div>
+            <div class="project-sub">
+              Chevrolet Camaro ZL1 2018 from NASCAR.
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item"
+          data-cat="motorsport"
+          data-title-en="Formula E Gen2"
+          data-title-es="Formula E Gen2"
+          onclick="openLightbox('motorsport_FE')"
+        >
+          <img
+            src="images/dcal_formula_e_gen2_07.jpg"
+            alt="Formula E Gen2"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center center;
+            "
+          />
+          <div class="portfolio-overlay">
+            <div class="project-title pj-title">Formula E Gen2</div>
+            <div class="project-cat">
+              Motorsport · Blender · Blender Cycles &nbsp;&middot;&nbsp;
+              <span class="img-count">4 images</span>
+            </div>
+            <div class="project-sub">Formula E model launched in 2019.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="section-header reveal">
+        <span class="section-label" id="about-label">About</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2 class="section-title" id="about-title">
+            19 years making images that speak.
+          </h2>
+          <p id="about-p1">
+            I&#8217;m <strong>Verde</strong>, a 3D generalist based in Valencia,
+            Spain. Since 2007 I&#8217;ve been turning ideas, blueprints and
+            sketches into images that communicate, convince and inspire.
+          </p>
+          <p id="about-p2">
+            My speciality is <strong>architectural visualisation</strong> and
+            <strong>vehicle simulation</strong>, though I&#8217;ve worked on
+            interior design, product and animation projects for clients across
+            Spain.
+          </p>
+          <p id="about-p3">
+            The last 10 years I&#8217;ve worked as a freelancer, giving me a
+            complete project vision: from briefing to delivery. I&#8217;m now
+            looking to join a <strong>stable team</strong> where I can keep
+            growing.
+          </p>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-name" id="sk1">Modelling</div>
+              <div class="skill-detail">
+                Blender &middot; Blender &middot; ZBrush
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">Materials</div>
+              <div class="skill-detail">
+                Substance &middot; Blender nodes
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name" id="sk4">Real-time</div>
+              <div class="skill-detail">Unreal Engine &middot; Blender EEVEE</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">Texturing</div>
+              <div class="skill-detail">Affinity &middot; Adobe</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal">
+          <div class="about-card">
+            <div class="about-card-title" id="about-timeline">Career</div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <div class="timeline-year">2015 &ndash; 2026</div>
+                <div class="timeline-role" id="tl1-role">
+                  Freelance 3D Generalist
+                </div>
+                <div class="timeline-company" id="tl1-co">
+                  Self-employed &middot; Remote and hybrid work
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <div class="timeline-year">2011 &ndash; 2015</div>
+                <div class="timeline-role" id="tl2-role">
+                  3D Generalist
+                </div>
+                <div class="timeline-company" id="tl2-co">
+                  Simulation and Modeling Lab (LSYM) &middot; Universitat de València
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <div class="timeline-year">2007 &ndash; 2010</div>
+                <div class="timeline-role" id="tl3-role">3D Generalist</div>
+                <div class="timeline-company" id="tl3-co">
+                  Automobile Laboratory (LaUPV) &middot; Universitat Politécnica de València
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background: var(--border)"></div>
+              <div>
+                <div class="timeline-year" id="tl4-year">Education</div>
+                <div class="timeline-role" id="tl4-role">
+                  Master in Engineering Design
+                </div>
+                <div class="timeline-company" id="tl4-co">
+                  Universitat Politécnica de València
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="process">
+      <div class="section-header reveal">
+        <span class="section-label" id="process-label">Process</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-title reveal" id="process-title">How I work</h2>
+      <div class="process-steps reveal">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div class="step-title" id="s1t">Briefing</div>
+          <div class="step-desc" id="s1d">
+            I understand the project, its goals and the final use of the images.
+            Plans, references and deadlines.
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div class="step-title" id="s2t">Modelling</div>
+          <div class="step-desc" id="s2d">
+            Building the 3D model with attention to geometric detail and mesh
+            efficiency.
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div class="step-title">Render</div>
+          <div class="step-desc" id="s3d">
+            Lighting, materials and render with Blender Cycles or Blender
+            Cycles, tailored to the character of the project.
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div class="step-title" id="s4t">Delivery</div>
+          <div class="step-desc" id="s4d">
+            Post-production, client review and delivery in the agreed formats
+            and resolutions.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="section-header reveal">
+        <span class="section-label" id="contact-label">Contact</span>
+        <div
+          class="section-rule"
+          style="background: rgba(255, 255, 255, 0.1)"
+        ></div>
+      </div>
+      <h2 class="section-title reveal" id="contact-title">
+        Let&#8217;s talk about your project
+      </h2>
+      <p class="contact-intro reveal" id="contact-intro">
+        Do you have an archviz, simulation or motorsport project that needs to
+        come to life? I&#8217;m available for new projects and open to joining a
+        team.
+      </p>
+      <form
+        class="contact-form reveal"
+        id="contact-form"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="bot-field" />
+        <div class="form-group">
+          <label class="form-label" id="fl-name">Name</label>
+          <input
+            class="form-input"
+            type="text"
+            name="name"
+            required
+            id="fi-name"
+            placeholder="Your name"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input
+            class="form-input"
+            type="email"
+            name="email"
+            required
+            placeholder="your@email.com"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label" id="fl-project">Project</label>
+          <textarea
+            class="form-input"
+            name="message"
+            rows="4"
+            required
+            id="fi-project"
+            placeholder="Tell me about your project..."
+          ></textarea>
+        </div>
+        <button class="form-submit" type="submit" id="form-submit">
+          Send message &rarr;
+        </button>
+      </form>
+    </section>
+    <footer>
+      <span class="footer-logo">Verde</span>
+      <span class="footer-copy" id="footer-copy"
+        >&copy; 2026 Verde &mdash; 3D Generalist</span
+      >
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div
+      id="lightbox"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      "
+      onclick="closeLightboxIfBg(event)"
+    >
+      <button
+        onclick="closeLightbox()"
+        style="
+          position: absolute;
+          top: 1.2rem;
+          right: 1.5rem;
+          background: none;
+          border: none;
+          color: #fff;
+          font-size: 2rem;
+          cursor: pointer;
+          line-height: 1;
+          opacity: 0.7;
+          transition: opacity 0.2s;
+        "
+        onmouseover="this.style.opacity = 1"
+        onmouseout="this.style.opacity = 0.7"
+      >
+        &times;
+      </button>
+      <div
+        id="lb-title"
+        style="
+          position: absolute;
+          top: 1.3rem;
+          left: 50%;
+          transform: translateX(-50%);
+          font-family: &quot;Bebas Neue&quot;, sans-serif;
+          font-size: 1.4rem;
+          letter-spacing: 0.08em;
+          color: #fff;
+          opacity: 0.9;
+          white-space: nowrap;
+        "
+      ></div>
+
+      <!-- Arrow left -->
+      <button
+        onclick="lbNav(-1)"
+        id="lb-prev"
+        style="
+          position: absolute;
+          left: 1.2rem;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          color: #fff;
+          font-size: 1.8rem;
+          width: 48px;
+          height: 48px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s;
+          border-radius: 2px;
+        "
+        onmouseover="this.style.background = 'rgba(255,255,255,.18)'"
+        onmouseout="this.style.background = 'rgba(255,255,255,.08)'"
+      >
+        &lsaquo;
+      </button>
+
+      <!-- Main image -->
+      <div
+        style="
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          padding: 4rem 5rem 0;
+          max-height: calc(100vh - 160px);
+        "
+      >
+        <img
+          id="lb-img"
+          src=""
+          alt=""
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: opacity 0.25s;
+          "
+        />
+      </div>
+
+      <!-- Caption -->
+      <div
+        id="lb-cap"
+        style="
+          font-family: &quot;DM Sans&quot;, sans-serif;
+          font-size: 12px;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.45);
+          margin-top: 0.6rem;
+          height: 1.2rem;
+        "
+      ></div>
+
+      <!-- Arrow right -->
+      <button
+        onclick="lbNav(1)"
+        id="lb-next"
+        style="
+          position: absolute;
+          right: 1.2rem;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          color: #fff;
+          font-size: 1.8rem;
+          width: 48px;
+          height: 48px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s;
+          border-radius: 2px;
+        "
+        onmouseover="this.style.background = 'rgba(255,255,255,.18)'"
+        onmouseout="this.style.background = 'rgba(255,255,255,.08)'"
+      >
+        &rsaquo;
+      </button>
+
+      <!-- Thumbnails -->
+      <div
+        id="lb-thumbs"
+        style="
+          display: flex;
+          gap: 8px;
+          padding: 1rem 1.5rem;
+          overflow-x: auto;
+          max-width: 100%;
+          align-items: center;
+          flex-shrink: 0;
+        "
+      ></div>
+    </div>
+    <script src="scripts/lang.js"></script>
+    <script src="scripts/lightbox.js"></script>
+  </body>
+</html>
