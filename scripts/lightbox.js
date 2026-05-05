@@ -6,14 +6,14 @@ const PROJECTS = {
       "Overpass for cyclists and pedestrians linking Sueca and Fortaleny (Valencia, Spain).",
     images: [
       {
-        src: "images/dcal_rotonda_fortaleny.jpg", cap: "Aerial view day",},
+        src: "images/dcal_rotonda_fortaleny.webp", cap: "Aerial view day",},
       { video: "https://youtu.be/SZetOqiG_l0", cap: "Vídeo" },  
 
-      { src: "images/dcal_rotonda_night_bridge.jpg", cap: "Night aerial" },
-      { src: "images/dcal_rotonda_night_hwy.jpg", cap: "Highway night" },
-      { src: "images/dcal_rotonda_hwy.jpg", cap: "Highway day" },
-      { src: "images/dcal_rotonda_3rd_person.jpg", cap: "Bridge walkthrough" },
-      { src: "images/dcal_rotonda_aerial.jpg", cap: "Roundabout" },
+      { src: "images/dcal_rotonda_night_bridge.webp", cap: "Night aerial" },
+      { src: "images/dcal_rotonda_night_hwy.webp", cap: "Highway night" },
+      { src: "images/dcal_rotonda_hwy.webp", cap: "Highway day" },
+      { src: "images/dcal_rotonda_3rd_person.webp", cap: "Bridge walkthrough" },
+      { src: "images/dcal_rotonda_aerial.webp", cap: "Roundabout" },
     ],
   },
   archviz_MainStr: {
@@ -24,24 +24,24 @@ const PROJECTS = {
     images: [
       {
         beforeAfter: true,
-        before: "images/dcal_alborache_bus_before.jpg",
-        after: "images/dcal_alborache_bus_after.jpg",
+        before: "images/dcal_alborache_bus_before.webp",
+        after: "images/dcal_alborache_bus_after.webp",
         cap: "Bus stop · Before & After",
       },
             {
         beforeAfter: true,
-        before: "images/dcal_alborache_church_before.jpg",
-        after: "images/dcal_alborache_church_after.jpg",
+        before: "images/dcal_alborache_church_before.webp",
+        after: "images/dcal_alborache_church_after.webp",
         cap: "Church · Before & After",
       },      {
         beforeAfter: true,
-        before: "images/dcal_alborache_street_before.jpg",
-        after: "images/dcal_alborache_street_after.jpg",
+        before: "images/dcal_alborache_street_before.webp",
+        after: "images/dcal_alborache_street_after.webp",
         cap: "Main street · Before & After",
       },      {
         beforeAfter: true,
-        before: "images/dcal_alborache_loadzone_before.jpg",
-        after: "images/dcal_alborache_loadzone_after.jpg",
+        before: "images/dcal_alborache_loadzone_before.webp",
+        after: "images/dcal_alborache_loadzone_after.webp",
         cap: "Load zone · Before & After",
       },
     ],
@@ -51,12 +51,12 @@ const PROJECTS = {
     titleEs: "Cargo Ships",
     subtitle: "",
     images: [
-      { src: "images/dcal_cargo_8.jpg", cap: "Ocean Wind · Side" },
-      { src: "images/dcal_cargo_3.jpg", cap: "Overview" },
-      { src: "images/dcal_cargo_5.jpg", cap: "Open hold" },
-      { src: "images/dcal_cargo_7_SHIP.jpg", cap: "Early model" },
-      { src: "images/hero_11.jpg", cap: "Bridge detail" },
-      { src: "images/hero_12.jpg", cap: "Deck detail" },
+      { src: "images/dcal_cargo_8.webp", cap: "Ocean Wind · Side" },
+      { src: "images/dcal_cargo_3.webp", cap: "Overview" },
+      { src: "images/dcal_cargo_5.webp", cap: "Open hold" },
+      { src: "images/dcal_cargo_7_SHIP.webp", cap: "Early model" },
+      { src: "images/hero_11.webp", cap: "Bridge detail" },
+      { src: "images/hero_12.webp", cap: "Deck detail" },
     ],
   },
   motorsport_F2: {
@@ -66,17 +66,17 @@ const PROJECTS = {
       "39k triangles including chassis, cockpit, wheels and steering wheel.",
     images: [
 
-      { src: "images/dcal_formula2_front.jpg", cap: "Front view" },
+      { src: "images/dcal_formula2_front.webp", cap: "Front view" },
       {
         beforeAfter: true,
-        before: "images/dcal_formula2_wire.jpg",
-        after: "images/dcal_formula2_front.jpg",
+        before: "images/dcal_formula2_wire.webp",
+        after: "images/dcal_formula2_front.webp",
         cap: "Front · Wireframe",
       },
-      { src: "images/dcal_formula2_rear.jpg", cap: "Rear view" },
-      { src: "images/dcal_formula2_cockpit.jpg", cap: "Cockpit" },
-      { src: "images/dcal_formula2_wire.jpg", cap: "Wireframe" },
-      { src: "images/dcal_formula2_UV.jpg", cap: "UV map" },
+      { src: "images/dcal_formula2_rear.webp", cap: "Rear view" },
+      { src: "images/dcal_formula2_cockpit.webp", cap: "Cockpit" },
+      { src: "images/dcal_formula2_wire.webp", cap: "Wireframe" },
+      { src: "images/dcal_formula2_UV.webp", cap: "UV map" },
     ],
   },
   simulation_Scenarios: {
@@ -84,13 +84,13 @@ const PROJECTS = {
     titleEs: "Escenarios de simulación",
     subtitle: "",
     images: [
-      { src: "images/dcal_scenarios_1.jpg", cap: "Wire of Av.Francia area, Valencia · Car driving practice simulator" },
-      { src: "images/dcal_scenarios_7.jpg", cap: "Av.Francia area, Valencia · Car driving practice simulator" },
-      { src: "images/dcal_scenarios_8.jpg", cap: "Av.Francia area, Valencia · Car driving practice simulator" },
-      { src: "images/dcal_scenarios_graneles01.jpg", cap: "Grapling dock in Valencia's Port" },
-      { src: "images/dcal_scenarios_graneles02.jpg", cap: "Grapling dock in Valencia's Port" },
-      { src: "images/hero_11.jpg", cap: "Bridge detail" },
-      { src: "images/hero_12.jpg", cap: "Deck detail" },
+      { src: "images/dcal_scenarios_1.webp", cap: "Wire of Av.Francia area, Valencia · Car driving practice simulator" },
+      { src: "images/dcal_scenarios_7.webp", cap: "Av.Francia area, Valencia · Car driving practice simulator" },
+      { src: "images/dcal_scenarios_8.webp", cap: "Av.Francia area, Valencia · Car driving practice simulator" },
+      { src: "images/dcal_scenarios_graneles01.webp", cap: "Grapling dock in Valencia's Port" },
+      { src: "images/dcal_scenarios_graneles02.webp", cap: "Grapling dock in Valencia's Port" },
+      { src: "images/hero_11.webp", cap: "Bridge detail" },
+      { src: "images/hero_12.webp", cap: "Deck detail" },
     ],
   },  
     archviz_TwnSqr: {
@@ -101,14 +101,14 @@ const PROJECTS = {
     images: [
       {
         beforeAfter: true,
-        before: "images/dcal_otos-actual-01.jpg",
-        after: "images/dcal_otos-actuacion-01.jpg",
+        before: "images/dcal_otos-actual-01.webp",
+        after: "images/dcal_otos-actuacion-01.webp",
         cap: "First Option · Before & After",
       },
             {
         beforeAfter: true,
-        before: "images/dcal_otos-actual-01.jpg",
-        after: "images/dcal_otos-actuacion-08.jpg",
+        before: "images/dcal_otos-actual-01.webp",
+        after: "images/dcal_otos-actuacion-08.webp",
         cap: "Second Option · Before & After",
       },
     ],
@@ -119,7 +119,7 @@ const PROJECTS = {
     subtitle:
       "47k triangles (including cockpit, wheels and steering wheel).",
     images: [
-      { src: "images/dcal_nismo_09.jpg", cap: "Motul Autech · Top" },
+      { src: "images/dcal_nismo_09.webp", cap: "Motul Autech · Top" },
       {
         turntable: true,
         framesDir: "images/nismo_turntable/nismo_tt_",  // ← ajusta esta ruta
@@ -128,24 +128,24 @@ const PROJECTS = {
       },      
       {
         beforeAfter: true,
-        before: "images/dcal_nismo_wire_front.jpg",
-        after: "images/dcal_nismo_00.jpg",
+        before: "images/dcal_nismo_wire_front.webp",
+        after: "images/dcal_nismo_00.webp",
         cap: "Motul Autech · Top · Wire",
       },        
       {
         beforeAfter: true,
-        before: "images/dcal_nismo_cockpit_wire.jpg",
-        after: "images/dcal_nismo_cockpit.jpg",
+        before: "images/dcal_nismo_cockpit_wire.webp",
+        after: "images/dcal_nismo_cockpit.webp",
         cap: "Cockpit view · Wire",
       },         
-      { src: "images/dcal_nismo_10.jpg", cap: "Front · Motul" },
-      { src: "images/dcal_nismo_07.jpg", cap: "Rear · Realize" },
-      { src: "images/dcal_nismo_untitled4.jpg", cap: "CS Craft Sports" },
-      { src: "images/dcal_nismo_untitled.jpg", cap: "Calsonic rear" },
+      { src: "images/dcal_nismo_10.webp", cap: "Front · Motul" },
+      { src: "images/dcal_nismo_07.webp", cap: "Rear · Realize" },
+      { src: "images/dcal_nismo_untitled4.webp", cap: "CS Craft Sports" },
+      { src: "images/dcal_nismo_untitled.webp", cap: "Calsonic rear" },
 
-      { src: "images/dcal_nismo_wire-02.jpg", cap: "Wireframe rear" },
-      { src: "images/dcal_nismo_wire-01.jpg", cap: "Wireframe front" },
-      { src: "images/dcal_nismo_UV.jpg", cap: "UV map" },
+      { src: "images/dcal_nismo_wire-02.webp", cap: "Wireframe rear" },
+      { src: "images/dcal_nismo_wire-01.webp", cap: "Wireframe front" },
+      { src: "images/dcal_nismo_UV.webp", cap: "UV map" },
     ],
   },
 
@@ -157,8 +157,8 @@ const PROJECTS = {
     images: [
       {
         beforeAfter: true,
-        before: "images/dcal_VdA-before.jpg",
-        after: "images/dcal_VdA-after.jpg",
+        before: "images/dcal_VdA-before.webp",
+        after: "images/dcal_VdA-after.webp",
         cap: "Main Road Renovation · Before & After",
       },
     ],
@@ -169,12 +169,12 @@ const PROJECTS = {
     subtitle:
       "STC 2000 Toyota 2019 model. 32k triangles including cockpit, wheels and steering wheel.",
     images: [
-      { src: "images/hero_28.jpg", cap: "Front left · YPF Infinia" },
-      { src: "images/hero_29.jpg", cap: "Rear left · YPF Infinia" },
-      { src: "images/hero_30.jpg", cap: "Cockpit" },
-      { src: "images/hero_31.jpg", cap: "Wireframe front" },
-      { src: "images/hero_32.jpg", cap: "Wireframe rear" },
-      { src: "images/hero_33.jpg", cap: "UV map" },
+      { src: "images/hero_28.webp", cap: "Front left · YPF Infinia" },
+      { src: "images/hero_29.webp", cap: "Rear left · YPF Infinia" },
+      { src: "images/hero_30.webp", cap: "Cockpit" },
+      { src: "images/hero_31.webp", cap: "Wireframe front" },
+      { src: "images/hero_32.webp", cap: "Wireframe rear" },
+      { src: "images/hero_33.webp", cap: "UV map" },
     ],
   },
   motorsport_SF: {
@@ -183,13 +183,13 @@ const PROJECTS = {
     subtitle:
       "34k triangles including cockpit, wheels and steering wheel.",
     images: [
-      { src: "images/dcal_superformula_front_4545.jpg", cap: "Front view" },
-      { src: "images/dcal_superformula_top_9999.jpg", cap: "Top view" },
-      { src: "images/dcal_superformula_rear_4545.jpg", cap: "Rear view" },
+      { src: "images/dcal_superformula_front_4545.webp", cap: "Front view" },
+      { src: "images/dcal_superformula_top_9999.webp", cap: "Top view" },
+      { src: "images/dcal_superformula_rear_4545.webp", cap: "Rear view" },
 
-      { src: "images/dcal_superformula_wire_01.jpg", cap: "Wireframe rear" },
-      { src: "images/dcal_superformula_wire_02.jpg", cap: "Wireframe front" },
-      { src: "images/dcal_superformula_UV.jpg", cap: "UV map" },
+      { src: "images/dcal_superformula_wire_01.webp", cap: "Wireframe rear" },
+      { src: "images/dcal_superformula_wire_02.webp", cap: "Wireframe front" },
+      { src: "images/dcal_superformula_UV.webp", cap: "UV map" },
     ],
   },
   motorsport_NSC: {
@@ -199,13 +199,13 @@ const PROJECTS = {
     images: [
       {
         beforeAfter: true,
-        before: "images/dcal_nascar_front_wire.jpg",
-        after: "images/dcal_nascar_front.jpg",
+        before: "images/dcal_nascar_front_wire.webp",
+        after: "images/dcal_nascar_front.webp",
         cap: "Front · Wire",
       },
-      { src: "images/dcal_nascar_rear.jpg", cap: "Rear · Fastlap" },
-      { src: "images/dcal_nascar_cockpit.jpg", cap: "Cockpit" },
-      { src: "images/dcal_nascar_UV.jpg", cap: "UV map" },
+      { src: "images/dcal_nascar_rear.webp", cap: "Rear · Fastlap" },
+      { src: "images/dcal_nascar_cockpit.webp", cap: "Cockpit" },
+      { src: "images/dcal_nascar_UV.webp", cap: "UV map" },
     ],
   },
   motorsport_FE: {
@@ -213,10 +213,10 @@ const PROJECTS = {
     titleEs: "Formula E Gen2",
     subtitle: "Formula E model launched in 2019.",
     images: [
-      { src: "images/hero_45.jpg", cap: "Top view" },
-      { src: "images/hero_46.jpg", cap: "Front view" },
-      { src: "images/hero_47.jpg", cap: "Wireframe" },
-      { src: "images/hero_48.jpg", cap: "Steering wheel" },
+      { src: "images/hero_45.webp", cap: "Top view" },
+      { src: "images/hero_46.webp", cap: "Front view" },
+      { src: "images/hero_47.webp", cap: "Wireframe" },
+      { src: "images/hero_48.webp", cap: "Steering wheel" },
     ],
   },
 };
@@ -565,14 +565,14 @@ document.addEventListener("keydown", (e) => {
 });
 
 const HERO_IMGS = [
-  "images/dcal_rotonda_night_bridge.jpg",
-  "images/dcal_formula2_front.jpg",
-  "images/dcal_liebherr984.jpg",
-  "images/dcal_alborache_bus_after.jpg",
-  "images/dcal_nascar_front.jpg",
+  "images/dcal_rotonda_night_bridge.webp",
+  "images/dcal_formula2_front.webp",
+  "images/dcal_liebherr984.webp",
+  "images/dcal_alborache_bus_after.webp",
+  "images/dcal_nascar_front.webp",
 
-  "images/dcal_otos-actuacion-01.jpg",
-  "images/dcal_rotonda_nit_hwy.jpg",
+  "images/dcal_otos-actuacion-01.webp",
+  "images/dcal_rotonda_nit_hwy.webp",
 ];
 
 // HERO CAROUSEL
