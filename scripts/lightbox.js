@@ -73,7 +73,12 @@ const PROJECTS = {
         after: "images/dcal_formula2_front.webp",
         cap: "Front · Wireframe",
       },
-      { src: "images/dcal_formula2_rear.webp", cap: "Rear view" },
+{
+        beforeAfter: true,
+        before: "images/dcal_formula2_rear_wire.webp",
+        after: "images/dcal_formula2_rear.webp",
+        cap: "Rear · Wireframe",
+      },
       { src: "images/dcal_formula2_cockpit.webp", cap: "Cockpit" },
       { src: "images/dcal_formula2_wire.webp", cap: "Wireframe" },
       { src: "images/dcal_formula2_UV.webp", cap: "UV map" },
