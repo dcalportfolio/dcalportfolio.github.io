@@ -1,37 +1,5 @@
 <!doctype html>
 <html lang="en">
-  <style>
-  /* Lightbox: fix viewport height en móvil (dvh descuenta la barra del navegador) */
-  #lightbox {
-    height: 100dvh !important;
-  }
-
-  /* Contenedor de imagen: más espacio en móvil */
-  #lightbox > div[style*="flex: 1"] {
-    max-height: calc(100dvh - 150px) !important;
-  }
-
-  @media (max-width: 600px) {
-    #lightbox > div[style*="flex: 1"] {
-      padding: 3.5rem 0.5rem 0 !important;
-      max-height: calc(100dvh - 130px) !important;
-    }
-
-    /* Thumbnails más pequeños en móvil para ganar espacio */
-    #lb-thumbs {
-      padding: 0.5rem 1rem !important;
-    }
-
-    /* Título más pequeño */
-    #lb-title {
-      font-size: 1rem !important;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 70vw;
-    }
-  }
-  </style>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,6 +10,57 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/style.css" />
+    <style>
+      /* ── Lightbox mobile fixes ── */
+      /* dvh = dynamic viewport height: se actualiza cuando la barra del navegador se muestra/oculta */
+      @supports (height: 100dvh) {
+        #lightbox { height: 100dvh; }
+      }
+
+      /* Contenedor central de la imagen */
+      #lb-image-wrap {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 3.5rem 5rem 0;
+        box-sizing: border-box;
+        min-height: 0;          /* permite que flex shrink funcione */
+        overflow: hidden;
+        max-height: calc(100dvh - 160px);
+      }
+      #lb-image-wrap img,
+      #lb-image-wrap > div {    /* cubre slider, turntable, vimeo */
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      @media (max-width: 600px) {
+        #lb-image-wrap {
+          padding: 3rem 0.75rem 0;
+          max-height: calc(100dvh - 140px);
+        }
+        #lb-title {
+          font-size: 0.95rem !important;
+          max-width: 68vw;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        #lb-thumbs {
+          padding: 0.4rem 0.75rem !important;
+        }
+        #lb-thumbs img {
+          height: 44px !important;
+          width: 62px !important;
+        }
+        #lb-prev, #lb-next {
+          width: 36px !important;
+          height: 36px !important;
+          font-size: 1.4rem !important;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -694,6 +713,7 @@
         display: none;
         position: fixed;
         inset: 0;
+        height: 100dvh;
         z-index: 1000;
         background: rgba(0, 0, 0, 0.95);
         flex-direction: column;
@@ -767,17 +787,7 @@
       </button>
 
       <!-- Main image -->
-      <div
-        style="
-          flex: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          padding: 3.5rem 3rem 0;
-          max-height: calc(100dvh - 150px);
-        "
-      >
+      <div id="lb-image-wrap">
         <img
           id="lb-img"
           src=""
