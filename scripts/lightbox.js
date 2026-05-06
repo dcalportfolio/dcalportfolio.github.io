@@ -66,14 +66,13 @@ const PROJECTS = {
       "39k triangles including chassis, cockpit, wheels and steering wheel.",
     images: [
 
-      { src: "images/dcal_formula2_front.webp", cap: "Front view" },
       {
         beforeAfter: true,
         before: "images/dcal_formula2_front_wire.webp",
         after: "images/dcal_formula2_front.webp",
         cap: "Front · Wireframe",
       },
-{
+      {
         beforeAfter: true,
         before: "images/dcal_formula2_rear_wire.webp",
         after: "images/dcal_formula2_rear.webp",
