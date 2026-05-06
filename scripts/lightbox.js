@@ -69,7 +69,7 @@ const PROJECTS = {
       { src: "images/dcal_formula2_front.webp", cap: "Front view" },
       {
         beforeAfter: true,
-        before: "images/dcal_formula2_wire.webp",
+        before: "images/dcal_formula2_front_wire.webp",
         after: "images/dcal_formula2_front.webp",
         cap: "Front · Wireframe",
       },
