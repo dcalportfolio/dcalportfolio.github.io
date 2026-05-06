@@ -266,7 +266,7 @@ function renderLightbox() {
     ttEl.style.cssText = `
       display:flex;align-items:center;justify-content:center;
       position:relative;max-width:100%;
-      max-height:calc(100dvh - 130px);aspect-ratio:4/3;
+      max-height:calc(100vh - 160px);aspect-ratio:4/3;
       width:min(700px,90vw);cursor:grab;
       user-select:none;-webkit-user-select:none;touch-action:none;
     `;
@@ -280,7 +280,7 @@ function renderLightbox() {
         <span style="font-size:11px;letter-spacing:.08em;color:#666;font-family:sans-serif;">cargando frames…</span>
       </div>
       <img id="tt-frame" draggable="false" alt="Vista 360°" style="
-        max-width:100%;max-height:calc(100dvh - 130px);
+        max-width:100%;max-height:calc(100vh - 160px);
         object-fit:contain;display:block;pointer-events:none;border-radius:8px;"/>
       <div id="tt-hint" style="position:absolute;bottom:12px;left:50%;
         transform:translateX(-50%);background:rgba(0,0,0,.55);color:#fff;
@@ -381,7 +381,7 @@ if (img.video) {
       user-select: none;
       -webkit-user-select: none;
       max-width: 100%;
-      max-height: calc(100dvh - 130px);
+      max-height: calc(100vh - 160px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -396,7 +396,7 @@ if (img.video) {
     afterImg.style.cssText = `
       display: block;
       max-width: 100%;
-      max-height: calc(100dvh - 130px);
+      max-height: calc(100vh - 160px);
       object-fit: contain;
       pointer-events: none;
     `;
@@ -406,7 +406,7 @@ if (img.video) {
     beforeImg.style.cssText = `
       display: block;
       max-width: 100%;
-      max-height: calc(100dvh - 130px);
+      max-height: calc(100vh - 160px);
       object-fit: contain;
       pointer-events: none;
       position: absolute;

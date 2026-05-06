@@ -1,37 +1,5 @@
 <!doctype html>
 <html lang="en">
-  <style>
-  /* Lightbox: fix viewport height en móvil (dvh descuenta la barra del navegador) */
-  #lightbox {
-    height: 100dvh !important;
-  }
-
-  /* Contenedor de imagen: más espacio en móvil */
-  #lightbox > div[style*="flex: 1"] {
-    max-height: calc(100dvh - 150px) !important;
-  }
-
-  @media (max-width: 600px) {
-    #lightbox > div[style*="flex: 1"] {
-      padding: 3.5rem 0.5rem 0 !important;
-      max-height: calc(100dvh - 130px) !important;
-    }
-
-    /* Thumbnails más pequeños en móvil para ganar espacio */
-    #lb-thumbs {
-      padding: 0.5rem 1rem !important;
-    }
-
-    /* Título más pequeño */
-    #lb-title {
-      font-size: 1rem !important;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 70vw;
-    }
-  }
-  </style>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -774,8 +742,8 @@
           align-items: center;
           justify-content: center;
           width: 100%;
-          padding: 3.5rem 3rem 0;
-          max-height: calc(100dvh - 150px);
+          padding: 4rem 5rem 0;
+          max-height: calc(100vh - 160px);
         "
       >
         <img
