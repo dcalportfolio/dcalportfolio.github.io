@@ -10,57 +10,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/style.css" />
-    <style>
-      /* ── Lightbox mobile fixes ── */
-      /* dvh = dynamic viewport height: se actualiza cuando la barra del navegador se muestra/oculta */
-      @supports (height: 100dvh) {
-        #lightbox { height: 100dvh; }
-      }
-
-      /* Contenedor central de la imagen */
-      #lb-image-wrap {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 3.5rem 5rem 0;
-        box-sizing: border-box;
-        min-height: 0;          /* permite que flex shrink funcione */
-        overflow: hidden;
-        max-height: calc(100dvh - 160px);
-      }
-      #lb-image-wrap img,
-      #lb-image-wrap > div {    /* cubre slider, turntable, vimeo */
-        max-width: 100%;
-        max-height: 100%;
-      }
-
-      @media (max-width: 600px) {
-        #lb-image-wrap {
-          padding: 3rem 0.75rem 0;
-          max-height: calc(100dvh - 140px);
-        }
-        #lb-title {
-          font-size: 0.95rem !important;
-          max-width: 68vw;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-        #lb-thumbs {
-          padding: 0.4rem 0.75rem !important;
-        }
-        #lb-thumbs img {
-          height: 44px !important;
-          width: 62px !important;
-        }
-        #lb-prev, #lb-next {
-          width: 36px !important;
-          height: 36px !important;
-          font-size: 1.4rem !important;
-        }
-      }
-    </style>
   </head>
 
   <body>
@@ -718,76 +667,99 @@
         background: rgba(0, 0, 0, 0.95);
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
       "
       onclick="closeLightboxIfBg(event)"
     >
-      <button
-        onclick="closeLightbox()"
-        style="
-          position: absolute;
-          top: 1.2rem;
-          right: 1.5rem;
-          background: none;
-          border: none;
-          color: #fff;
-          font-size: 2rem;
-          cursor: pointer;
-          line-height: 1;
-          opacity: 0.7;
-          transition: opacity 0.2s;
-        "
-        onmouseover="this.style.opacity = 1"
-        onmouseout="this.style.opacity = 0.7"
-      >
-        &times;
-      </button>
-      <div
-        id="lb-title"
-        style="
-          position: absolute;
-          top: 1.3rem;
-          left: 50%;
-          transform: translateX(-50%);
-          font-family: &quot;Bebas Neue&quot;, sans-serif;
-          font-size: 1.4rem;
-          letter-spacing: 0.08em;
-          color: #fff;
-          opacity: 0.9;
-          white-space: nowrap;
-        "
-      ></div>
+      <!-- Top bar: título + botón cerrar (altura fija ~56px) -->
+      <div style="
+        width: 100%;
+        flex-shrink: 0;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 0 4rem;
+      ">
+        <div
+          id="lb-title"
+          style="
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 0.08em;
+            color: #fff;
+            opacity: 0.9;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 80vw;
+          "
+        ></div>
+        <button
+          onclick="closeLightbox()"
+          style="
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+          "
+          onmouseover="this.style.opacity = 1"
+          onmouseout="this.style.opacity = 0.7"
+        >
+          &times;
+        </button>
+      </div>
 
-      <!-- Arrow left -->
-      <button
-        onclick="lbNav(-1)"
-        id="lb-prev"
-        style="
-          position: absolute;
-          left: 1.2rem;
-          top: 50%;
-          transform: translateY(-50%);
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          color: #fff;
-          font-size: 1.8rem;
-          width: 48px;
-          height: 48px;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: background 0.2s;
-          border-radius: 2px;
-        "
-        onmouseover="this.style.background = 'rgba(255,255,255,.18)'"
-        onmouseout="this.style.background = 'rgba(255,255,255,.08)'"
-      >
-        &lsaquo;
-      </button>
+      <!-- Zona central: imagen (crece para ocupar todo el espacio disponible) -->
+      <div style="
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 4rem;
+        position: relative;
+        overflow: hidden;
+      ">
+        <!-- Arrow left -->
+        <button
+          onclick="lbNav(-1)"
+          id="lb-prev"
+          style="
+            position: absolute;
+            left: 0.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 1.8rem;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            border-radius: 2px;
+            z-index: 1;
+          "
+          onmouseover="this.style.background = 'rgba(255,255,255,.18)'"
+          onmouseout="this.style.background = 'rgba(255,255,255,.08)'"
+        >
+          &lsaquo;
+        </button>
 
-      <!-- Main image -->
-      <div id="lb-image-wrap">
         <img
           id="lb-img"
           src=""
@@ -799,61 +771,65 @@
             transition: opacity 0.25s;
           "
         />
+
+        <!-- Arrow right -->
+        <button
+          onclick="lbNav(1)"
+          id="lb-next"
+          style="
+            position: absolute;
+            right: 0.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 1.8rem;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            border-radius: 2px;
+            z-index: 1;
+          "
+          onmouseover="this.style.background = 'rgba(255,255,255,.18)'"
+          onmouseout="this.style.background = 'rgba(255,255,255,.08)'"
+        >
+          &rsaquo;
+        </button>
       </div>
 
-      <!-- Caption -->
+      <!-- Caption (altura fija ~28px) -->
       <div
         id="lb-cap"
         style="
-          font-family: &quot;DM Sans&quot;, sans-serif;
+          flex-shrink: 0;
+          font-family: 'DM Sans', sans-serif;
           font-size: 12px;
           letter-spacing: 0.15em;
           text-transform: uppercase;
           color: rgba(255, 255, 255, 0.45);
-          margin-top: 0.6rem;
-          height: 1.2rem;
+          height: 28px;
+          display: flex;
+          align-items: center;
         "
       ></div>
 
-      <!-- Arrow right -->
-      <button
-        onclick="lbNav(1)"
-        id="lb-next"
-        style="
-          position: absolute;
-          right: 1.2rem;
-          top: 50%;
-          transform: translateY(-50%);
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          color: #fff;
-          font-size: 1.8rem;
-          width: 48px;
-          height: 48px;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: background 0.2s;
-          border-radius: 2px;
-        "
-        onmouseover="this.style.background = 'rgba(255,255,255,.18)'"
-        onmouseout="this.style.background = 'rgba(255,255,255,.08)'"
-      >
-        &rsaquo;
-      </button>
-
-      <!-- Thumbnails -->
+      <!-- Thumbnails (altura fija ~80px) -->
       <div
         id="lb-thumbs"
         style="
+          flex-shrink: 0;
           display: flex;
           gap: 8px;
-          padding: 1rem 1.5rem;
+          padding: 0.5rem 1.5rem 0.75rem;
           overflow-x: auto;
           max-width: 100%;
           align-items: center;
-          flex-shrink: 0;
+          height: 80px;
         "
       ></div>
     </div>
