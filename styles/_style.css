@@ -355,21 +355,6 @@ section {
   aspect-ratio: unset
 }
 
-.portfolio-item.featured.hero-item {
-  grid-row: span 4;
-}
-
-.step-desc strong {
-  color: var(--ink);
-  font-weight: 500;
-}
-
-/* Hero title split: name en ink, especialidad en accent */
-#hero-title-span {
-  color: var(--accent);
-  display: block;
-}
-
 #about {
   background: var(--surface)
 }
