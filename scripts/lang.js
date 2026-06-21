@@ -4,15 +4,15 @@ const T = {
     'hero-desc': '19 years turning ideas into visual reality. Specialised in archviz and vehicle simulation.',
     'hero-cta': 'View portfolio \u2192', 'stat1': 'Years of experience', 'stat2': 'Completed projects', 'stat3': 'Main sectors',
     'portfolio-label': 'Work', 'portfolio-title': 'Selected projects',
-    'f-all': 'Selecci\u00f3n', 'f-archviz': 'Archviz', 'f-simulation': 'Simulation', 'f-motorsport': 'Motorsport',
+    'f-archviz': 'Archviz', 'f-simulation': 'Simulation', 'f-motorsport': 'Motorsport',
     'about-label': 'About', 'about-title': '19 years making images that speak.',
     'about-p1': 'I\u2019m <strong>Daniel Cal</strong>, a 3D generalist based in Valencia, Spain. Since 2007 I\u2019ve been turning ideas, blueprints and sketches into images that communicate, convince and inspire.',
     'about-p2': 'My speciality is <strong>architectural visualisation</strong> and <strong>vehicle simulation</strong>, though I\u2019ve worked on interior design, product and animation projects for clients across Spain.',
     'about-p3': 'The last 10 years I\u2019ve worked as a freelancer, giving me a complete project vision: from briefing to delivery. I\u2019m now looking to join a <strong>stable team</strong> where I can keep growing.',
-    'about-timeline': 'Career', 'tl1-role': 'Freelance 3D Generalist', 'tl1-co': 'Self-employed \u00b7 Remote and hybrid work',
+    'about-timeline': 'Career', 'about-education': 'Education', 'tl1-role': 'Freelance 3D Generalist', 'tl1-co': 'Self-employed \u00b7 Remote and hybrid work',
     'tl2-role': '3D Generalist', 'tl2-co': 'Simulation and Modeling Lab (LSYM) \u00b7 Universitat de Val\u00e8ncia',
     'tl3-role': '3D Generalist', 'tl3-co': 'Automobile Laboratory (LaUPV) \u00b7 Universitat Polit\u00e9cnica de Val\u00e8ncia',
-    'tl4-year': 'Education', 'tl4-role': 'Master in Engineering Design', 'tl4-co': 'Universitat Polit\u00e9cnica de Val\u00e8ncia',
+    'tl4-role': 'Master in Engineering Design', 'tl4-co': 'Universitat Polit\u00e9cnica de Val\u00e8ncia',
     'sk1': 'Modelling', 'sk4': 'Real-time',
     'process-label': 'Process', 'process-title': 'How I work',
     's1t': 'Briefing', 's1d': 'Plans, references, intended use and deadlines. I ask early about the format (still, animation, real-time) to shape every decision that follows.',
@@ -29,15 +29,15 @@ const T = {
     'hero-desc': '19 a\u00f1os convirtiendo ideas en realidad visual. Especializado en archviz y simulaci\u00f3n.',
     'hero-cta': 'Ver portfolio \u2192', 'stat1': 'A\u00f1os de experiencia', 'stat2': 'Proyectos completados', 'stat3': 'Sectores principales',
     'portfolio-label': 'Trabajos', 'portfolio-title': 'Proyectos seleccionados',
-    'f-all': 'Selecci\u00f3n', 'f-archviz': 'Archviz', 'f-simulation': 'Simulaci\u00f3n', 'f-motorsport': 'Motorsport',
+    'f-archviz': 'Archviz', 'f-simulation': 'Simulaci\u00f3n', 'f-motorsport': 'Motorsport',
     'about-label': 'Sobre m\u00ed', 'about-title': '19 a\u00f1os haciendo im\u00e1genes que hablan.',
     'about-p1': 'Soy <strong>Daniel Cal</strong>, generalista 3D con base en Valencia. Desde 2007 convierto ideas, planos y bocetos en im\u00e1genes que comunican, convencen y emocionan.',
     'about-p2': 'Mi especialidad es la <strong>visualizaci\u00f3n arquitect\u00f3nica</strong> y la <strong>simulaci\u00f3n de veh\u00edculos</strong>, aunque he trabajado en proyectos de interiorismo, producto y animaci\u00f3n para clientes de toda Espa\u00f1a.',
     'about-p3': 'Los \u00faltimos 10 a\u00f1os los he pasado como aut\u00f3nomo, lo que me ha dado una visi\u00f3n completa del proyecto: del briefing a la entrega. Ahora busco incorporarme a un <strong>equipo estable</strong> donde seguir creciendo.',
-    'about-timeline': 'Trayectoria', 'tl1-role': 'Generalista 3D Freelance', 'tl1-co': 'Aut\u00f3nomo \u00b7 Trabajo remoto e h\u00edbrido',
+    'about-timeline': 'Trayectoria', 'about-education': 'Formaci\u00f3n', 'tl1-role': 'Generalista 3D Freelance', 'tl1-co': 'Aut\u00f3nomo \u00b7 Trabajo remoto e h\u00edbrido',
     'tl2-role': 'Generalista 3D', 'tl2-co': 'Laboratorio de Simulaci\u00f3n y Modelado (LSYM) \u00b7 Universitat de Val\u00e8ncia',
     'tl3-role': 'Generalista 3D', 'tl3-co': 'Laboratorio del Autom\u00f3vil (LaUPV) \u00b7 Universitat Polit\u00e8cnica de Val\u00e8ncia',
-    'tl4-year': 'Formaci\u00f3n', 'tl4-role': 'M\u00e1ster en Dise\u00f1o de Ingenier\u00eda', 'tl4-co': 'Universitat Polit\u00e8cnica de Val\u00e8ncia',
+    'tl4-role': 'M\u00e1ster en Dise\u00f1o de Ingenier\u00eda', 'tl4-co': 'Universitat Polit\u00e8cnica de Val\u00e8ncia',
     'sk1': 'Modelado', 'sk4': 'Tiempo real',
     'process-label': 'Proceso', 'process-title': 'C\u00f3mo trabajo',
     's1t': 'Briefing', 's1d': 'Planos, referencias, uso final y plazos. Pregunto desde el principio por el formato (imagen fija, animación, tiempo real) para que condicione todas las decisiones siguientes.',
@@ -78,7 +78,7 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 function filterProjects(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (btn) btn.classList.add('active');
   const items = document.querySelectorAll('.portfolio-item');
   items.forEach(item => {
     item.classList.remove('featured');

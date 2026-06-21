@@ -155,6 +155,21 @@ nav {
   color: var(--accent)
 }
 
+.hero-title-subtle {
+  font-family: var(--fb);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--ink-light);
+  margin-bottom: .8rem
+}
+
+.hero-title-subtle span {
+  color: var(--ink-light)
+}
+
 .hero-desc {
   font-size: 16px;
   color: var(--ink-mid);
@@ -281,6 +296,21 @@ section {
   color: #fff
 }
 
+.filter-bar-prominent {
+  gap: 1rem;
+  margin-bottom: 3rem
+}
+
+.filter-bar-prominent .filter-btn {
+  padding: .9rem 1.8rem;
+  font-family: var(--fd);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: .05em;
+  text-transform: none;
+  border-width: 1px
+}
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -364,12 +394,6 @@ section {
   font-weight: 500;
 }
 
-/* Hero title split: name en ink, especialidad en accent */
-#hero-title-span {
-  color: var(--accent);
-  display: block;
-}
-
 #about {
   background: var(--surface)
 }
@@ -424,6 +448,10 @@ section {
   background: var(--bg);
   border: 1px solid var(--border);
   padding: 2.5rem
+}
+
+.about-card-education {
+  margin-top: 1.5rem
 }
 
 .about-card-title {

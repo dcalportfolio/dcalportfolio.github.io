@@ -33,8 +33,8 @@
       <div class="hero-overlay"></div>
       <div class="hero-grid"></div>
       <div class="hero-content">
-        <h1 class="hero-title" id="hero-title">
-          Daniel Cal<br /><span id="hero-title-span">3D Generalist</span>
+        <h1 class="hero-title hero-title-subtle" id="hero-title">
+          Daniel Cal <span id="hero-title-span">— 3D Generalist</span>
         </h1>
         <p class="hero-desc" id="hero-desc">
           19 years turning ideas into visual reality. Specialised in archviz and simulators.
@@ -64,17 +64,7 @@
         <span class="section-label" id="portfolio-label">Work</span>
         <div class="section-rule"></div>
       </div>
-      <h2 class="section-title reveal" id="portfolio-title">
-        Selected projects
-      </h2>
-      <div class="filter-bar reveal">
-        <button
-          class="filter-btn active"
-          onclick="filterProjects('selection', this)"
-          id="f-all"
-        >
-          Selección
-        </button>
+      <div class="filter-bar filter-bar-prominent reveal">
         <button
           class="filter-btn"
           onclick="filterProjects('archviz', this)"
@@ -554,10 +544,13 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="about-card about-card-education">
+            <div class="about-card-title" id="about-education">Education</div>
             <div class="timeline-item">
               <div class="timeline-dot" style="background: var(--border)"></div>
               <div>
-                <div class="timeline-year" id="tl4-year">Education</div>
+                <div class="timeline-year" id="tl4-year">2009 &ndash; 2011</div>
                 <div class="timeline-role" id="tl4-role">
                   Master in Engineering Design
                 </div>
@@ -868,7 +861,7 @@
     <script src="scripts/lightbox.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        filterProjects('selection', document.getElementById('f-all'));
+        filterProjects('selection', null);
       });
     </script>
   </body>
