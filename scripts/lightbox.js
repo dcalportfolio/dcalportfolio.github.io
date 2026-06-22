@@ -83,6 +83,20 @@ const PROJECTS = {
       { src: "images/dcal_formula2_UV.webp", cap: "UV map" },
     ],
   },
+  simulation_HeavyMachinery: {
+    titleEn: "Heavy Machinery",
+    titleEs: "Heavy Machinery",
+    subtitle: "",
+    images: [
+      { src: "images/CAT_16m_01.webp", cap: "CAT 16m · Front" },
+      { src: "images/CAT_16m_02.webp", cap: "CAT 16m · Back" },
+      { src: "images/dcal_liebherr984.webp", cap: "Liebherr 984C" },
+      { src: "images/dcal_cat980k.webp", cap: "CAT 994D" },
+      { src: "images/dcal_sem669c.webp", cap: "SEM 669C" },
+      { src: "images/CAT980k02y.webp", cap: "CAT 980K" },
+    ],
+  },
+
   simulation_Scenarios: {
     titleEn: "Simulator scenarios",
     titleEs: "Escenarios de simulación",
