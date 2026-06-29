@@ -120,7 +120,7 @@ const PROJECTS = {
     images: [
       { src: "images/opel_corsa_d_front.webp", cap: "Opel Corsa" },
       { src: "images/opel_corsa_wireframe.webp", cap: "Opel Corsa wireframe and interior" },
-      { src: "images/bmw_x5_front_and_back.webp", cap: "BMW X5" },
+      { src: "images/bmw_x5_front_back.webp", cap: "BMW X5" },
       { src: "images/volkswagen_polo_9n.webp", cap: "Volkswagen Polo 9n" },
       { src: "images/renault_r28_wire.webp", cap: "Renault r28 Formula 1 wireframe" },
       { src: "images/renault_r28_front_and_back.webp", cap: "Renault r28 Formula 1" },
