@@ -262,11 +262,11 @@ const PROJECTS = {
     titleEs: "Formula E Gen2",
     subtitle: "Formula E model launched in 2019.",
     images: [
-      { src: "images/dcal_Formula_E_gen2_Audi-logos_back_black.webp", cap: "Top Back view" },
-      { src: "images/dcal_Formula_E_gen2_Audi-logos_top_side.webp", cap: "Front view" },
-      { src: "images/dcal_Formula_E_gen2_Audi-logos_back_side.webp", cap: "Front view" },
-      { src: "images/dcal_formula_e_gen2_wire.webp", cap: "Wireframe" },
-      { src: "images/dcal_formula_e_gen2_sw.webp", cap: "Steering wheel" },    ],
+      { src: "images/hero_45.webp", cap: "Top view" },
+      { src: "images/hero_46.webp", cap: "Front view" },
+      { src: "images/hero_47.webp", cap: "Wireframe" },
+      { src: "images/hero_48.webp", cap: "Steering wheel" },
+    ],
   },
 };
 
