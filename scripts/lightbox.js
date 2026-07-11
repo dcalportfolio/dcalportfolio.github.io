@@ -268,7 +268,86 @@ const PROJECTS = {
       { src: "images/dcal_formula_e_gen2_wire.webp", cap: "Wireframe" },
       { src: "images/dcal_formula_e_gen2_sw.webp", cap: "Steering wheel" },    ],
   },
-};
+},
+
+  motorsport_indycar: {
+    titleEn: "Indycar 2019",
+    titleEs: "Indycar 2019",
+    subtitle:
+      "34k triangles including cockpit, wheels and steering wheel.",
+    images: [
+      { src: "images/dcal_indycar-03.webp", cap: "Front view" },
+      { src: "images/dcal_indycar-04.webp", cap: "Top view" },
+      { src: "images/dcal_superformula_rear_4545.webp", cap: "Rear view" },
+
+      { src: "images/dcal_indycar-2-8-render-wire-01.webp", cap: "Wireframe rear" },
+      { src: "images/dcal_indycar-2-8-render-wire-02.webp", cap: "Wireframe rear" },
+      { src: "images/dcal_indycar-sw.webp", cap: "Indycar Steering Wheel" },
+      { src: "images/dcal_superformula_UV.webp", cap: "UV map" },
+    ],
+  },
+
+  motorsport_SuperGT: {
+    titleEn: "SuperGT GT500",
+    titleEs: "SuperGT GT500",
+    subtitle:
+      "34k triangles including cockpit, wheels and steering wheel.",
+    images: [
+      { src: "images/dcal_lexus_side.webp", cap: "Front view" },
+      {
+        beforeAfter: true,
+        before: "images/dcal_lexus_top-wire.webp",
+        after: "images/dcal_lexus_top.webp",
+        cap: "Front · Wireframe",
+      },      
+      { src: "images/dcal_lexus_top.webp", cap: "Top view" },
+      { src: "images/dcal_superformula_rear_4545.webp", cap: "Rear view" },
+
+      { src: "images/dcal_superformula_wire_01.webp", cap: "Wireframe rear" },
+      { src: "images/dcal_superformula_wire_02.webp", cap: "Wireframe front" },
+
+            {
+        beforeAfter: true,
+        before: "images/dcal_lexus_int-wire-wire.webp",
+        after: "images/dcal_lexus_int.webp",
+        cap: "Front · Wireframe",
+      },   
+      { src: "images/dcal_lexus_UV.webp", cap: "UV map" },
+    ],
+  },
+
+  motorsport_Nascar: {
+  titleEn: "Nascar Chevrolet Camaro 2019",
+  titleEs: "Nascar Chevrolet Camaro 2019",
+  subtitle:
+    "34k triangles including cockpit, wheels and steering wheel.",
+  images: [
+    { src: "images/dcal_superformula_front_4545.webp", cap: "Front view" },
+    { src: "images/dcal_superformula_top_9999.webp", cap: "Top view" },
+    { src: "images/dcal_superformula_rear_4545.webp", cap: "Rear view" },
+
+    { src: "images/dcal_superformula_wire_01.webp", cap: "Wireframe rear" },
+    { src: "images/dcal_superformula_wire_02.webp", cap: "Wireframe front" },
+    { src: "images/dcal_superformula_UV.webp", cap: "UV map" },
+  ],
+},
+  
+  motorsport_StockCar: {
+  titleEn: "StockCar Brasil 2018",
+  titleEs: "StockCar Brasil 2018",
+  subtitle:
+    "34k triangles including cockpit, wheels and steering wheel.",
+  images: [
+    { src: "images/dcal_superformula_front_4545.webp", cap: "Front view" },
+    { src: "images/dcal_superformula_top_9999.webp", cap: "Top view" },
+    { src: "images/dcal_superformula_rear_4545.webp", cap: "Rear view" },
+
+    { src: "images/dcal_superformula_wire_01.webp", cap: "Wireframe rear" },
+    { src: "images/dcal_superformula_wire_02.webp", cap: "Wireframe front" },
+    { src: "images/dcal_superformula_UV.webp", cap: "UV map" },
+  ],
+},
+
 
 let lbProject = null;
 let lbIndex = 0;
