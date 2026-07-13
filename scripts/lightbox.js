@@ -74,8 +74,8 @@ const PROJECTS = {
       },
       {
         beforeAfter: true,
-        before: "images/dcal_formula2_rear_wire.webp",
-        after: "images/dcal_formula2_rear.webp",
+        before: "images/dcal_formula2_rear_crop_wire.webp",
+        after: "images/dcal_formula2_rear_crop.webp",
         cap: "Rear · Wireframe",
       },
       { src: "images/dcal_formula2_cockpit.webp", cap: "Cockpit" },
@@ -168,19 +168,19 @@ const PROJECTS = {
     subtitle:
       "47k triangles (including cockpit, wheels and steering wheel).",
     images: [
-      { src: "images/dcal_nismo_09.webp", cap: "Motul Autech · Top" },
+      {
+        beforeAfter: true,
+        before: "images/dcal_nismo_wire_04.webp",
+        after: "images/dcal_nismo_04.webp",
+        cap: "Motul Autech · Top · Wire",
+      }, 
       {
         turntable: true,
         framesDir: "images/nismo_turntable/nismo_tt_",  // ← ajusta esta ruta
         frameCount: 24,
         cap: "360° view",
       },      
-      {
-        beforeAfter: true,
-        before: "images/dcal_nismo_wire_front.webp",
-        after: "images/dcal_nismo_00.webp",
-        cap: "Motul Autech · Top · Wire",
-      },        
+       
       {
         beforeAfter: true,
         before: "images/dcal_nismo_cockpit_wire.webp",
