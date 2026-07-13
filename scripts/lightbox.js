@@ -252,7 +252,8 @@ const PROJECTS = {
         after: "images/dcal_nascar_front.webp",
         cap: "Front · Wire",
       },
-      { src: "images/dcal_nascar_rear.webp", cap: "Rear · Fastlap" },
+      
+      { src: "images/dcal_nascar_rear.webp", cap: "Rear" },
       { src: "images/dcal_nascar_cockpit.webp", cap: "Cockpit" },
       { src: "images/dcal_nascar_UV.webp", cap: "UV map" },
     ],
@@ -315,21 +316,6 @@ const PROJECTS = {
     ],
   },
 
-  motorsport_Nascar: {
-  titleEn: "Nascar Chevrolet Camaro 2019",
-  titleEs: "Nascar Chevrolet Camaro 2019",
-  subtitle:
-    "34k triangles including cockpit, wheels and steering wheel.",
-  images: [
-    { src: "images/dcal_superformula_front_4545.webp", cap: "Front view" },
-    { src: "images/dcal_superformula_top_9999.webp", cap: "Top view" },
-    { src: "images/dcal_superformula_rear_4545.webp", cap: "Rear view" },
-
-    { src: "images/dcal_superformula_wire_01.webp", cap: "Wireframe rear" },
-    { src: "images/dcal_superformula_wire_02.webp", cap: "Wireframe front" },
-    { src: "images/dcal_superformula_UV.webp", cap: "UV map" },
-  ],
-},
   
   motorsport_StockCar: {
   titleEn: "StockCar Brasil 2018",
@@ -337,13 +323,13 @@ const PROJECTS = {
   subtitle:
     "34k triangles including cockpit, wheels and steering wheel.",
   images: [
-    { src: "images/dcal_superformula_front_4545.webp", cap: "Front view" },
-    { src: "images/dcal_superformula_top_9999.webp", cap: "Top view" },
-    { src: "images/dcal_superformula_rear_4545.webp", cap: "Rear view" },
+    { src: "images/dcal_stock_car_render_01.webp", cap: "Elevated view" },
+    { src: "images/dcal_stock_car_render_04.webp", cap: "Side view" },
+    { src: "images/dcal_stock_car_render_02.webp", cap: "Rear view" },
 
-    { src: "images/dcal_superformula_wire_01.webp", cap: "Wireframe rear" },
-    { src: "images/dcal_superformula_wire_02.webp", cap: "Wireframe front" },
-    { src: "images/dcal_superformula_UV.webp", cap: "UV map" },
+    { src: "images/dcal_stock_car_render_03.webp", cap: "Cockpit" },
+    { src: "images/dcal_stock_car_wire.webp", cap: "Wireframe" },
+    { src: "images/dcal_stock_car_UV.webp", cap: "UV map" },
   ],
 },
 };
