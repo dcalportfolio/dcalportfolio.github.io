@@ -268,7 +268,7 @@ const PROJECTS = {
       { src: "images/dcal_formula_e_gen2_wire.webp", cap: "Wireframe" },
       { src: "images/dcal_formula_e_gen2_sw.webp", cap: "Steering wheel" },    ],
   },
-},
+
 
   motorsport_indycar: {
     titleEn: "Indycar 2019",
