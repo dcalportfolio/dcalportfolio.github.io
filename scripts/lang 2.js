@@ -88,7 +88,14 @@ function filterProjects(cat, btn) {
       item.style.display = item.dataset.cat === cat ? '' : 'none';
     }
   });
-  document.querySelectorAll('[data-featured="true"]').forEach(item => item.classList.add('featured'));
+  if (cat === 'selection') {
+    document.querySelectorAll('[data-featured="true"]').forEach(item => item.classList.add('featured'));
+  } else {
+    let first = true;
+    items.forEach(item => {
+      if (item.style.display !== 'none' && first) { item.classList.add('featured'); first = false; }
+    });
+  }
 }
 window.addEventListener('scroll', () => {
   document.querySelector('nav').style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.4)' : 'none';
