@@ -269,6 +269,7 @@ const PROJECTS = {
       { src: "images/dcal_formula_e_gen2_sw.webp", cap: "Steering wheel" },    ],
   },
 
+
   motorsport_indycar: {
     titleEn: "Indycar 2019",
     titleEs: "Indycar 2019",
@@ -346,7 +347,7 @@ const PROJECTS = {
     { src: "images/dcal_superformula_UV.webp", cap: "UV map" },
   ],
 },
-};
+
 
 let lbProject = null;
 let lbIndex = 0;
