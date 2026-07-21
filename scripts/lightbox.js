@@ -233,6 +233,7 @@ const PROJECTS = {
       "34k triangles including cockpit, wheels and steering wheel.",
     images: [
       { src: "images/dcal_superformula_front_4545.webp", cap: "Front view" },
+      { src: "images/dcal_superformula_jmcs_render_front_4545.webp", cap: "Front view" },      
       { src: "images/dcal_superformula_top_9999.webp", cap: "Top view" },
       { src: "images/dcal_superformula_rear_4545.webp", cap: "Rear view" },
 
