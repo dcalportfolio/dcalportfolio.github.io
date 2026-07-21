@@ -547,27 +547,16 @@ if (img.video) {
       <path d="M7 5L2 10L7 15M13 5L18 10L13 15" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>`;
     handle.style.cssText = `
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
       width: 42px; height: 42px;
       background: #fff;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.35);
     `;
-
-    // Bigger invisible touch target around the handle. Only touches that
-    // start here can drag the slider on mobile — this keeps a pinch-zoom
-    // gesture started anywhere else on the image completely untouched.
-    const handleHit = document.createElement("div");
-    handleHit.style.cssText = `
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 64px; height: 64px;
-      display: flex; align-items: center; justify-content: center;
-      touch-action: none;
-    `;
-    handleHit.appendChild(handle);
-    divider.appendChild(handleHit);
+    divider.appendChild(handle);
 
     // Labels
     const mkLabel = (text, side) => {
@@ -611,29 +600,12 @@ if (img.video) {
     };
 
     let dragging = false;
-
-    // Desktop: dragging from anywhere on the image, as before.
     sliderEl.addEventListener("mousedown",  (e) => { dragging = true; setPos(getPct(e)); });
     window.addEventListener("mousemove",    (e) => { if (dragging) setPos(getPct(e)); });
     window.addEventListener("mouseup",      ()  => { dragging = false; });
-
-    // Mobile: only a touch that starts on the handle can drag the slider,
-    // and dragging is cancelled the instant a second finger appears —
-    // that hand-off lets the browser's native pinch-to-zoom take over
-    // cleanly instead of the divider chasing one of the two fingers.
-    handleHit.addEventListener("touchstart", (e) => {
-      if (e.touches.length !== 1) return;
-      dragging = true;
-      setPos(getPct(e));
-    }, { passive: true });
-    window.addEventListener("touchmove", (e) => {
-      if (!dragging) return;
-      if (e.touches.length !== 1) { dragging = false; return; }
-      setPos(getPct(e));
-    }, { passive: true });
-    window.addEventListener("touchend", (e) => {
-      if (e.touches.length === 0) dragging = false;
-    });
+    sliderEl.addEventListener("touchstart", (e) => { dragging = true; setPos(getPct(e)); }, { passive: true });
+    window.addEventListener("touchmove",    (e) => { if (dragging) setPos(getPct(e)); }, { passive: true });
+    window.addEventListener("touchend",     ()  => { dragging = false; });
 
     setPos(50);
 
