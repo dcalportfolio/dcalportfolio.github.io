@@ -172,7 +172,7 @@ const PROJECTS = {
         beforeAfter: true,
         before: "images/dcal_nismo_wire_04.webp",
         after: "images/dcal_nismo_04.webp",
-        cap: "Motul Autech · Top · Wire",
+        cap: "Motul Autech Team · Top · Wire",
       }, 
       {
         turntable: true,
@@ -187,13 +187,13 @@ const PROJECTS = {
         after: "images/dcal_nismo_cockpit.webp",
         cap: "Cockpit view · Wire",
       },         
-      { src: "images/dcal_nismo_10.webp", cap: "Front · Motul" },
-      { src: "images/dcal_nismo_07.webp", cap: "Rear · Realize" },
-      { src: "images/dcal_nismo_untitled4.webp", cap: "CS Craft Sports" },
-      { src: "images/dcal_nismo_untitled.webp", cap: "Calsonic rear" },
+
+      { src: "images/dcal_nismo_realize_01.webp", cap: "Rear · Realize Team" },
+      { src: "images/dcal_nismo_cs_01.webp", cap: "CS Craft Sports Team" },
+      { src: "images/dcal_nismo_calsonic_01.webp", cap: "Calsonic Team" },
 
       { src: "images/dcal_nismo_wire-02.webp", cap: "Wireframe rear" },
-      { src: "images/dcal_nismo_wire-01.webp", cap: "Wireframe front" },
+
       { src: "images/dcal_nismo_UV.webp", cap: "UV map" },
     ],
   },
@@ -232,9 +232,9 @@ const PROJECTS = {
     subtitle:
       "34k triangles including cockpit, wheels and steering wheel.",
     images: [
-      { src: "images/dcal_superformula_front_4545.webp", cap: "Front view" },
+      { src: "images/dcal_superformula_front_4548.webp", cap: "Front view" },
       { src: "images/dcal_superformula_top_9999.webp", cap: "Top view" },
-      { src: "images/dcal_superformula_rear_4545.webp", cap: "Rear view" },
+      { src: "images/dcal_superformula_jmcs_rear_4545.webp", cap: "Rear view" },
 
       { src: "images/dcal_superformula_wire_01.webp", cap: "Wireframe rear" },
       { src: "images/dcal_superformula_wire_02.webp", cap: "Wireframe front" },
