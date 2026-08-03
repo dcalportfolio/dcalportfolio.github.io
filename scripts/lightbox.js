@@ -277,7 +277,7 @@ const PROJECTS = {
       "34k triangles including cockpit, wheels and steering wheel.",
     images: [
       { src: "images/dcal_indycar_street_01.webp", cap: "Street Race setup · Front view" },
-      { src: "images/dcal_indycar_street_02.webp", cap: "Oval setup · Rear view" },
+      { src: "images/dcal_indycar_street_03.webp", cap: "Oval setup · Rear view" },
 
 
       { src: "images/dcal_indycar-2-8-render-wire-01.webp", cap: "Wireframe rear" },
