@@ -543,20 +543,11 @@ section {
   border-radius: 5px;
   background: var(--tb, var(--accent));
   color: #fff;
-  flex-shrink: 0
-}
-
-.tool-badge svg {
-  width: 11px;
-  height: 11px;
-  display: block
-}
-
-.tool-badge-text {
   font-family: var(--fd);
   font-size: 9px;
   letter-spacing: 0;
   line-height: 1;
+  flex-shrink: 0
 }
 
 .about-card {

@@ -501,7 +501,7 @@ section {
   grid-template-columns: 1fr 1fr;
   gap: 0;
   margin-top: 2rem;
-  background: var(--bg);
+  background: var(--bg) 
   border-top: 1px solid var(--border);
   border-left: 1px solid var(--border)
 }
@@ -521,42 +521,7 @@ section {
 
 .skill-detail {
   font-size: 12px;
-  color: var(--ink-light);
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem .9rem
-}
-
-.tool {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  white-space: nowrap
-}
-
-.tool-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  border-radius: 5px;
-  background: var(--tb, var(--accent));
-  color: #fff;
-  flex-shrink: 0
-}
-
-.tool-badge svg {
-  width: 11px;
-  height: 11px;
-  display: block
-}
-
-.tool-badge-text {
-  font-family: var(--fd);
-  font-size: 9px;
-  letter-spacing: 0;
-  line-height: 1;
+  color: var(--ink-light)
 }
 
 .about-card {
