@@ -89,33 +89,7 @@ function filterProjects(cat, btn) {
     }
   });
   document.querySelectorAll('[data-featured="true"]').forEach(item => item.classList.add('featured'));
-  const grid = document.getElementById('portfolio-grid');
-  if (grid) grid.scrollLeft = 0;
-  updatePortfolioArrows();
 }
-
-function updatePortfolioArrows() {
-  const grid = document.getElementById('portfolio-grid');
-  const left = document.getElementById('portfolio-arrow-left');
-  const right = document.getElementById('portfolio-arrow-right');
-  if (!grid || !left || !right) return;
-  const maxScroll = grid.scrollWidth - grid.clientWidth;
-  left.classList.toggle('is-visible', grid.scrollLeft > 8);
-  right.classList.toggle('is-visible', maxScroll > 8 && grid.scrollLeft < maxScroll - 8);
-}
-
-function scrollPortfolio(dir) {
-  const grid = document.getElementById('portfolio-grid');
-  if (!grid) return;
-  grid.scrollBy({ left: dir * grid.clientWidth * 0.85, behavior: 'smooth' });
-}
-
-(function initPortfolioScroll() {
-  const grid = document.getElementById('portfolio-grid');
-  if (!grid) return;
-  grid.addEventListener('scroll', updatePortfolioArrows);
-  window.addEventListener('resize', updatePortfolioArrows);
-})();
 window.addEventListener('scroll', () => {
   document.querySelector('nav').style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.4)' : 'none';
 });

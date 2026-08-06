@@ -54,18 +54,7 @@ nav {
   letter-spacing: .08em;
   color: #fff;
   text-decoration: none;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  gap: .5rem
-}
-
-.logo-icon {
-  height: 1em;
-  width: 1em;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0
+  line-height: 1
 }
 
 .nav-right {
@@ -725,10 +714,7 @@ footer {
   font-family: var(--fd);
   font-size: 1.3rem;
   letter-spacing: .08em;
-  color: rgba(255, 255, 255, .3);
-  display: flex;
-  align-items: center;
-  gap: .5rem
+  color: rgba(255, 255, 255, .3)
 }
 
 .footer-copy {
