@@ -707,10 +707,12 @@ document.addEventListener("keydown", (e) => {
 
 const HERO_IMGS = [
   "images/dcal_rotonda_night_bridge.webp",
-  "images/dcal_formula2_front.webp",
+  "images/dcal_Formula_E_gen2_Audi-logos_top_side.webp",
+
   "images/dcal_liebherr984.webp",
   "images/dcal_alborache_bus_after.webp",
-  "images/dcal_Formula_E_gen2_Audi-logos_top_side.webp",
+  "images/dcal_formula2_front.webp",
+
 
   "images/dcal_otos-actuacion-01.webp",
   "images/dcal_rotonda_nit_hwy.webp",
