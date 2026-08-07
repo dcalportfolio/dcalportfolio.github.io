@@ -468,10 +468,6 @@ section {
   flex-basis: 520px
 }
 
-.portfolio-item[data-cat="motorsport"] {
-  flex-basis: 300px !important
-}
-
 .step-desc strong {
   color: var(--ink);
   font-weight: 500;
@@ -850,10 +846,6 @@ footer {
     flex-basis: 380px
   }
 
-  .portfolio-item[data-cat="motorsport"] {
-    flex-basis: 240px !important
-  }
-
   .portfolio-arrow {
     display: none
   }
@@ -877,10 +869,6 @@ footer {
   .portfolio-item.featured,
   .portfolio-item.featured.hero-item {
     flex-basis: 260px
-  }
-
-  .portfolio-item[data-cat="motorsport"] {
-    flex-basis: 210px !important
   }
 
   .process-steps {
