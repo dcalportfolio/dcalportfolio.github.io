@@ -218,12 +218,19 @@ const PROJECTS = {
     subtitle:
       "STC 2000 Toyota 2019 model. 32k triangles including cockpit, wheels and steering wheel.",
     images: [
-      { src: "images/hero_28.webp", cap: "Front left · YPF Infinia" },
-      { src: "images/hero_29.webp", cap: "Rear left · YPF Infinia" },
-      { src: "images/hero_30.webp", cap: "Cockpit" },
-      { src: "images/hero_31.webp", cap: "Wireframe front" },
-      { src: "images/hero_32.webp", cap: "Wireframe rear" },
-      { src: "images/hero_33.webp", cap: "UV map" },
+      {
+        beforeAfter: true,
+        before: "images/dcal_stc2000--wire-01.webp",
+        after: "images/dcal_stc2000-render-front-left-02.webp",
+        cap: "Front left · YPF Infinia" },
+      {
+        beforeAfter: true,
+        before: "images/dcal_stc2000--wire-02.webp",
+        after: "images/dcal_stc2000-render-rear-left.webp",
+        cap: "Rear left · YPF Infinia" },
+      { src: "images/dcal_stc2000-render-cockpit-01.webp", cap: "Cockpit" },
+
+      { src: "images/dcal_stc2000_UV.webp", cap: "UV map" },
     ],
   },
   motorsport_SF: {
@@ -299,13 +306,8 @@ const PROJECTS = {
         after: "images/dcal_lexus_top.webp",
         cap: "Front · Wireframe",
       },      
-      { src: "images/dcal_lexus_top.webp", cap: "Top view" },
-      { src: "images/dcal_superformula_rear_4545.webp", cap: "Rear view" },
 
-      { src: "images/dcal_superformula_wire_01.webp", cap: "Wireframe rear" },
-      { src: "images/dcal_superformula_wire_02.webp", cap: "Wireframe front" },
-
-            {
+      {
         beforeAfter: true,
         before: "images/dcal_lexus_int-wire-wire.webp",
         after: "images/dcal_lexus_int.webp",
