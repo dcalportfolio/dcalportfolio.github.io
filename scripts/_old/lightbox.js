@@ -333,49 +333,6 @@ const PROJECTS = {
     { src: "images/dcal_stock_car_UV.webp", cap: "UV map" },
   ],
 },
-  other_Sculpt: {
-    titleEn: "Sculpt",
-    titleEs: "Sculpt",
-    subtitle: "",
-    images: [
-      { src: "images/dcal_sculpt_shrek.webp", cap: "Shrek" },
-      { src: "images/dcal_sculpt_swimmer.webp", cap: "Swimmer" },
-      { src: "images/dcal_sculpt_body.webp", cap: "Body" },
-    ],
-  },
-  other_Gunnimals: {
-    titleEn: "Gunnimals - Mobile Game",
-    titleEs: "Gunnimals - Mobile Game",
-    subtitle: "",
-    images: [
-      { src: "images/dcal_gunnimals_01.webp", cap: "Gunnimals 01" },
-      { src: "images/dcal_gunnimals_02.webp", cap: "Gunnimals 02" },
-      { src: "images/dcal_gunnimals_03.webp", cap: "Gunnimals 03" },
-      { src: "images/dcal_gunnimals_04.webp", cap: "Gunnimals 04" },
-      { src: "images/dcal_gunnimals_05.webp", cap: "Gunnimals 05" },
-      { src: "images/dcal_gunnimals_06.webp", cap: "Gunnimals 06" },
-      { src: "images/dcal_gunnimals_07.webp", cap: "Gunnimals 07" },
-    ],
-  },
-  simulation_RoadBike: {
-    titleEn: "Road bike",
-    titleEs: "Road bike",
-    subtitle: "",
-    images: [
-      {
-        beforeAfter: true,
-        before: "images/dcal_road_bike_01_wire.webp",
-        after: "images/dcal_road_bike_01.webp",
-        cap: "Road bike 01 · Wireframe",
-      },
-      {
-        beforeAfter: true,
-        before: "images/dcal_road_bike_02_wire.webp",
-        after: "images/dcal_road_bike_02.webp",
-        cap: "Road bike 02 · Wireframe",
-      },
-    ],
-  },
 };
 
 let lbProject = null;

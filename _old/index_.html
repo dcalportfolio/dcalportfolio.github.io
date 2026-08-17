@@ -91,13 +91,6 @@
         >
           Motorsport
         </button>
-        <button
-          class="filter-btn"
-          onclick="filterProjects('other', this)"
-          id="f-other"
-        >
-          Other
-        </button>
       </div>
       <div class="portfolio-scroll" id="portfolio-scroll">
       <div class="portfolio-grid" id="portfolio-grid">
@@ -557,31 +550,6 @@
         </div>
         <div
           class="portfolio-item"
-          data-cat="simulation"
-          data-title-en="Road bike"
-          data-title-es="Road bike"
-          onclick="openLightbox('simulation_RoadBike')"
-        >
-          <img
-            src="images/dcal_road_bike_02.webp"
-            alt="Road bike"
-            style="
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              object-position: center center;
-            "
-          />
-          <div class="portfolio-overlay">
-            <div class="project-title pj-title">Road bike</div>
-            <div class="project-cat">
-              Simulation &nbsp;&middot;&nbsp;
-              <span class="img-count">2 images</span>
-            </div>
-          </div>
-        </div>
-        <div
-          class="portfolio-item"
           data-cat="motorsport"
           data-title-en="NASCAR 2019"
           data-title-es="NASCAR 2019"
@@ -636,56 +604,6 @@
             </div>
           </div>
         </div>        
-        <div
-          class="portfolio-item"
-          data-cat="other"
-          data-title-en="Sculpt"
-          data-title-es="Sculpt"
-          onclick="openLightbox('other_Sculpt')"
-        >
-          <img
-            src="images/dcal_sculpt_shrek.webp"
-            alt="Sculpt"
-            style="
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              object-position: center center;
-            "
-          />
-          <div class="portfolio-overlay">
-            <div class="project-title pj-title">Sculpt</div>
-            <div class="project-cat">
-              Other · ZBrush &nbsp;&middot;&nbsp;
-              <span class="img-count">3 images</span>
-            </div>
-          </div>
-        </div>
-        <div
-          class="portfolio-item"
-          data-cat="other"
-          data-title-en="Gunnimals - Mobile Game"
-          data-title-es="Gunnimals - Mobile Game"
-          onclick="openLightbox('other_Gunnimals')"
-        >
-          <img
-            src="images/dcal_gunnimals_03.webp"
-            alt="Gunnimals - Mobile Game"
-            style="
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              object-position: center center;
-            "
-          />
-          <div class="portfolio-overlay">
-            <div class="project-title pj-title">Gunnimals - Mobile Game</div>
-            <div class="project-cat">
-              Other &nbsp;&middot;&nbsp;
-              <span class="img-count">7 images</span>
-            </div>
-          </div>
-        </div>
       </div>
       <button class="portfolio-arrow portfolio-arrow-left" id="portfolio-arrow-left" onclick="scrollPortfolio(-1)" aria-label="Scroll left">
         <span class="portfolio-arrow-icon">&lsaquo;</span>
