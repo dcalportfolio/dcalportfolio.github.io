@@ -49,13 +49,14 @@ const PROJECTS = {
   simulation_Cargo: {
     titleEn: "Cargo Ships",
     titleEs: "Cargo Ships",
-    subtitle: "Different cargo ships models for Harbour simulators",
+    subtitle: "",
     images: [
       { src: "images/dcal_cargo_8.webp", cap: "Ocean Wind · Side" },
       { src: "images/dcal_cargo_3.webp", cap: "Overview" },
       { src: "images/dcal_cargo_5.webp", cap: "Open hold" },
       { src: "images/dcal_cargo_7_SHIP.webp", cap: "Early model" },
-
+      { src: "images/hero_11.webp", cap: "Bridge detail" },
+      { src: "images/hero_12.webp", cap: "Deck detail" },
     ],
   },
   motorsport_F2: {
@@ -137,7 +138,8 @@ const PROJECTS = {
       { src: "images/dcal_scenarios_8.webp", cap: "Av.Francia area, Valencia · Car driving practice simulator" },
       { src: "images/dcal_scenarios_graneles01.webp", cap: "Grapling dock in Valencia's Port" },
       { src: "images/dcal_scenarios_graneles02.webp", cap: "Grapling dock in Valencia's Port" },
-
+      { src: "images/hero_11.webp", cap: "Bridge detail" },
+      { src: "images/hero_12.webp", cap: "Deck detail" },
     ],
   },  
     archviz_TwnSqr: {
@@ -237,12 +239,12 @@ const PROJECTS = {
     subtitle:
       "34k triangles including cockpit, wheels and steering wheel.",
     images: [
-      { src: "images/dcal_superformula_front_4548.webp", cap: "Top side view" },
+      { src: "images/dcal_superformula_front_4548.webp", cap: "Front view" },
       { src: "images/dcal_superformula_top_9999.webp", cap: "Top view" },
       { src: "images/dcal_superformula_jmcs_rear_4545.webp", cap: "Rear view" },
 
-      { src: "images/dcal_superformula_wire_01.webp", cap: "Front Wireframe" },
-      { src: "images/dcal_superformula_wire_02.webp", cap: "Rear Wireframe" },
+      { src: "images/dcal_superformula_wire_01.webp", cap: "Wireframe rear" },
+      { src: "images/dcal_superformula_wire_02.webp", cap: "Wireframe front" },
       { src: "images/dcal_superformula_UV.webp", cap: "UV map" },
     ],
   },
@@ -268,10 +270,9 @@ const PROJECTS = {
     titleEs: "Formula E Gen2",
     subtitle: "Formula E model launched in 2019.",
     images: [
-
-      { src: "images/dcal_Formula_E_gen2_Audi-logos_top_side.webp", cap: "Top side view" },
       { src: "images/dcal_Formula_E_gen2_Audi-logos_back_black.webp", cap: "Top Back view" },
-      { src: "images/dcal_Formula_E_gen2_Audi-logos_back_side.webp", cap: "Side back view" },
+      { src: "images/dcal_Formula_E_gen2_Audi-logos_top_side.webp", cap: "Front view" },
+      { src: "images/dcal_Formula_E_gen2_Audi-logos_back_side.webp", cap: "Front view" },
       { src: "images/dcal_formula_e_gen2_wire.webp", cap: "Wireframe" },
       { src: "images/dcal_formula_e_gen2_sw.webp", cap: "Steering wheel" },    ],
   },
@@ -288,7 +289,7 @@ const PROJECTS = {
 
       { src: "images/dcal_indycar-2-8-render-wire-01.webp", cap: "Wireframe rear" },
       { src: "images/dcal_indycar-sw.webp", cap: "Indycar Steering Wheel" },
-
+      { src: "images/dcal_superformula_UV.webp", cap: "UV map" },
     ],
   },
 
@@ -308,7 +309,7 @@ const PROJECTS = {
 
       {
         beforeAfter: true,
-        before: "images/dcal_lexus_int-wire.webp",
+        before: "images/dcal_lexus_int-wire-wire.webp",
         after: "images/dcal_lexus_int.webp",
         cap: "Front · Wireframe",
       },   
@@ -359,19 +360,19 @@ const PROJECTS = {
   simulation_RoadBike: {
     titleEn: "Road bike",
     titleEs: "Road bike",
-    subtitle: "Made-up bike model for Road Bike simulator",
+    subtitle: "",
     images: [
       {
         beforeAfter: true,
         before: "images/dcal_road_bike_01_wire.webp",
         after: "images/dcal_road_bike_01.webp",
-        cap: "Road bike · Wireframe",
+        cap: "Road bike 01 · Wireframe",
       },
       {
         beforeAfter: true,
         before: "images/dcal_road_bike_02_wire.webp",
         after: "images/dcal_road_bike_02.webp",
-        cap: "Road bike · Wireframe",
+        cap: "Road bike 02 · Wireframe",
       },
     ],
   },
@@ -555,7 +556,7 @@ if (img.video) {
       display: block;
       max-width: 100%;
       max-height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       pointer-events: none;
     `;
 
@@ -565,7 +566,7 @@ if (img.video) {
       display: block;
       max-width: 100%;
       max-height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       pointer-events: none;
       position: absolute;
       top: 50%;
