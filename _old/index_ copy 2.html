@@ -200,7 +200,7 @@
           onclick="openLightbox('simulation_Scenarios')"
         >
           <img
-            src="images/dcal_scenarios_gallery.webp"
+            src="images/dcal_scenarios_0.webp"
             alt="Simulator Scenarios"
             style="
               width: 100%;
@@ -312,7 +312,7 @@
           onclick="openLightbox('simulation_Cargo')"
         >
           <img
-            src="images/dcal_cargo_gallery.webp"
+            src="images/dcal_cargo_8.webp"
             alt="Cargo Ships"
             style="
               width: 100%;
@@ -937,141 +937,74 @@
         inset: 0;
         height: 100dvh;
         z-index: 1000;
-        background: rgba(0, 0, 0, 0.97);
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
       "
       onclick="closeLightboxIfBg(event)"
     >
-      <!-- Full-bleed stage: image occupies the entire viewport, everything else floats on top of it -->
+      <!-- Top bar: título + botón cerrar (altura fija ~56px) -->
       <div style="
-        position: relative;
         width: 100%;
-        height: 100%;
+        flex-shrink: 0;
+        height: 56px;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
+        position: relative;
+        padding: 0 4rem;
       ">
-        <img
-          id="lb-img"
-          src=""
-          alt=""
-          style="
-            max-width: 100vw;
-            max-height: 100dvh;
-            object-fit: contain;
-            transition: opacity 0.25s;
-          "
-        />
-
-        <!-- Title + counter: small floating pill, top-left, over the image -->
         <div
           id="lb-title"
           style="
-            position: absolute;
-            top: 1rem;
-            left: 1.2rem;
-            z-index: 5;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             letter-spacing: 0.08em;
             color: #fff;
-            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+            opacity: 0.9;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 70vw;
-            pointer-events: none;
+            max-width: 80vw;
           "
         ></div>
-
-        <!-- Close button: floating, top-right, over the image -->
         <button
           onclick="closeLightbox()"
           style="
             position: absolute;
-            top: 0.7rem;
-            right: 0.8rem;
-            z-index: 5;
-            background: rgba(0, 0, 0, 0.35);
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
             border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
             color: #fff;
-            font-size: 1.8rem;
+            font-size: 2rem;
             cursor: pointer;
             line-height: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.85;
-            transition: opacity 0.2s, background 0.2s;
+            opacity: 0.7;
+            transition: opacity 0.2s;
           "
-          onmouseover="this.style.opacity = 1; this.style.background = 'rgba(0,0,0,.55)'"
-          onmouseout="this.style.opacity = 0.85; this.style.background = 'rgba(0,0,0,.35)'"
+          onmouseover="this.style.opacity = 1"
+          onmouseout="this.style.opacity = 0.7"
         >
           &times;
         </button>
+      </div>
 
-        <!-- Subtitle overlay: top edge of the image, fades 3s after each image change -->
-        <div
-          id="lb-subtitle-overlay"
-          style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            display: none;
-            padding: 3.2rem 4.5rem 2.8rem;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
-            text-align: center;
-            pointer-events: none;
-            opacity: 0;
-            z-index: 3;
-          "
-        >
-          <span
-            id="lb-subtitle-text"
-            style="
-              font-family: 'DM Sans', sans-serif;
-              font-size: 13px;
-              letter-spacing: 0.03em;
-              color: rgba(255, 255, 255, 0.9);
-              line-height: 1.5;
-            "
-          ></span>
-        </div>
-
-        <!-- Caption overlay: bottom edge of the image, just above the thumbnail strip, fades 3s after each image change -->
-        <div
-          id="lb-cap-overlay"
-          style="
-            position: absolute;
-            bottom: 88px;
-            left: 0;
-            right: 0;
-            display: none;
-            padding: 2.8rem 4.5rem 1.4rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
-            text-align: center;
-            pointer-events: none;
-            opacity: 0;
-            z-index: 3;
-          "
-        >
-          <span
-            id="lb-cap-text"
-            style="
-              font-family: 'DM Sans', sans-serif;
-              font-size: 12px;
-              letter-spacing: 0.15em;
-              text-transform: uppercase;
-              color: rgba(255, 255, 255, 0.9);
-            "
-          ></span>
-        </div>
-
-        <!-- Arrow left: floating over the image, true edge of the screen -->
+      <!-- Zona central: imagen (crece para ocupar todo el espacio disponible) -->
+      <div style="
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 4rem;
+        position: relative;
+        overflow: hidden;
+      ">
+        <!-- Arrow left -->
         <button
           onclick="lbNav(-1)"
           id="lb-prev"
@@ -1080,9 +1013,8 @@
             left: 0.6rem;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            backdrop-filter: blur(2px);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             color: #fff;
             font-size: 1.8rem;
             width: 48px;
@@ -1093,15 +1025,27 @@
             justify-content: center;
             transition: background 0.2s;
             border-radius: 2px;
-            z-index: 4;
+            z-index: 1;
           "
-          onmouseover="this.style.background = 'rgba(255,255,255,.22)'"
-          onmouseout="this.style.background = 'rgba(255,255,255,.1)'"
+          onmouseover="this.style.background = 'rgba(255,255,255,.18)'"
+          onmouseout="this.style.background = 'rgba(255,255,255,.08)'"
         >
           &lsaquo;
         </button>
 
-        <!-- Arrow right: floating over the image, true edge of the screen -->
+        <img
+          id="lb-img"
+          src=""
+          alt=""
+          style="
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: opacity 0.25s;
+          "
+        />
+
+        <!-- Arrow right -->
         <button
           onclick="lbNav(1)"
           id="lb-next"
@@ -1110,9 +1054,8 @@
             right: 0.6rem;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            backdrop-filter: blur(2px);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             color: #fff;
             font-size: 1.8rem;
             width: 48px;
@@ -1123,33 +1066,45 @@
             justify-content: center;
             transition: background 0.2s;
             border-radius: 2px;
-            z-index: 4;
+            z-index: 1;
           "
-          onmouseover="this.style.background = 'rgba(255,255,255,.22)'"
-          onmouseout="this.style.background = 'rgba(255,255,255,.1)'"
+          onmouseover="this.style.background = 'rgba(255,255,255,.18)'"
+          onmouseout="this.style.background = 'rgba(255,255,255,.08)'"
         >
           &rsaquo;
         </button>
-
-        <!-- Thumbnails: floating strip at the very bottom, over the image -->
-        <div
-          id="lb-thumbs"
-          style="
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 4;
-            display: flex;
-            gap: 8px;
-            padding: 0.5rem 1.2rem 0.7rem;
-            overflow-x: auto;
-            align-items: center;
-            height: 88px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
-          "
-        ></div>
       </div>
+
+      <!-- Caption (altura fija ~28px) -->
+      <div
+        id="lb-cap"
+        style="
+          flex-shrink: 0;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 12px;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.45);
+          height: 28px;
+          display: flex;
+          align-items: center;
+        "
+      ></div>
+
+      <!-- Thumbnails (altura fija ~80px) -->
+      <div
+        id="lb-thumbs"
+        style="
+          flex-shrink: 0;
+          display: flex;
+          gap: 8px;
+          padding: 0.5rem 1.5rem 0.75rem;
+          overflow-x: auto;
+          max-width: 100%;
+          align-items: center;
+          height: 80px;
+        "
+      ></div>
     </div>
     <script src="scripts/lang.js"></script>
     <script src="scripts/lightbox.js"></script>

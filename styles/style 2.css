@@ -460,6 +460,14 @@ section {
   text-transform: none
 }
 
+.portfolio-item.featured {
+  flex-basis: 420px
+}
+
+.portfolio-item.featured.hero-item {
+  flex-basis: 520px
+}
+
 .portfolio-item[data-cat="motorsport"] {
   flex-basis: 300px !important
 }
@@ -834,6 +842,14 @@ footer {
     height: 280px
   }
 
+  .portfolio-item.featured {
+    flex-basis: 320px
+  }
+
+  .portfolio-item.featured.hero-item {
+    flex-basis: 380px
+  }
+
   .portfolio-item[data-cat="motorsport"] {
     flex-basis: 240px !important
   }
@@ -856,6 +872,11 @@ footer {
   .portfolio-item {
     flex-basis: 210px;
     height: 250px
+  }
+
+  .portfolio-item.featured,
+  .portfolio-item.featured.hero-item {
+    flex-basis: 260px
   }
 
   .portfolio-item[data-cat="motorsport"] {

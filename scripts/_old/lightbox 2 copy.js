@@ -380,7 +380,6 @@ const PROJECTS = {
 
 let lbProject = null;
 let lbIndex = 0;
-let lbFadeTimer = null;
 // lang variable already declared above
 
 function openLightbox(projectId) {
@@ -394,7 +393,6 @@ function openLightbox(projectId) {
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
   document.body.style.overflow = "";
-  clearTimeout(lbFadeTimer);
 }
 
 function closeLightboxIfBg(e) {
@@ -693,39 +691,11 @@ if (img.video) {
     lbImg.onload = () => { lbImg.style.opacity = 1; };
   }
 
+  document.getElementById("lb-cap").textContent = img.cap;
   const title = lang === "es" ? p.titleEs : p.titleEn;
+  const sub = p.subtitle ? " — " + p.subtitle : "";
   document.getElementById("lb-title").textContent =
-    title + "  " + (lbIndex + 1) + " / " + p.images.length;
-
-  // ── SUBTITLE + CAPTION OVERLAYS (inside the image, fade 3s after change) ──
-  const subOverlay = document.getElementById("lb-subtitle-overlay");
-  const subText = document.getElementById("lb-subtitle-text");
-  const capOverlay = document.getElementById("lb-cap-overlay");
-  const capText = document.getElementById("lb-cap-text");
-
-  clearTimeout(lbFadeTimer);
-
-  subText.textContent = p.subtitle || "";
-  subOverlay.style.display = p.subtitle ? "block" : "none";
-
-  capText.textContent = img.cap || "";
-  capOverlay.style.display = img.cap ? "block" : "none";
-
-  // Show instantly (no transition), then force a reflow so the fade-out
-  // transition applies cleanly to the next opacity change.
-  [subOverlay, capOverlay].forEach((el) => {
-    el.style.transition = "none";
-    el.style.opacity = "1";
-  });
-  void capOverlay.offsetWidth;
-  [subOverlay, capOverlay].forEach((el) => {
-    el.style.transition = "opacity 0.8s ease";
-  });
-
-  lbFadeTimer = setTimeout(() => {
-    subOverlay.style.opacity = "0";
-    capOverlay.style.opacity = "0";
-  }, 3000);
+    title + sub + "  " + (lbIndex + 1) + " / " + p.images.length;
 
   // Arrows visibility
   document.getElementById("lb-prev").style.opacity = lbIndex > 0 ? "1" : "0.2";
