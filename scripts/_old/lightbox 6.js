@@ -3,7 +3,7 @@ const PROJECTS = {
     titleEn: "Overpass Renders",
     titleEs: "Overpass Renders",
     subtitle:
-      "Overpass for cyclists and pedestrians linking Sueca and Fortaleny towns (Valencia, Spain).",
+      "Overpass for cyclists and pedestrians linking Sueca and Fortaleny (Valencia, Spain).",
     images: [
       {
         src: "images/dcal_rotonda_fortaleny.webp", cap: "Aerial view day",},
@@ -20,19 +20,19 @@ const PROJECTS = {
     titleEn: "Main Street Renovation",
     titleEs: "Renovación Calle Mayor",
     subtitle:
-      "Renovation of the main street. Conversion to one-way traffic, continuous roadway and pavement, addition of bollards and tactile tiles, and a new loading zone. Alborache (Valencia, Spain).",
+      "Alborache (Valencia, Spain).",
     images: [
       {
         beforeAfter: true,
         before: "images/dcal_alborache_bus_before.webp",
         after: "images/dcal_alborache_bus_after.webp",
-        cap: "Bus stop area · Before & After",
+        cap: "Bus stop · Before & After",
       },
             {
         beforeAfter: true,
         before: "images/dcal_alborache_church_before.webp",
         after: "images/dcal_alborache_church_after.webp",
-        cap: "Church Square · Before & After",
+        cap: "Church · Before & After",
       },      {
         beforeAfter: true,
         before: "images/dcal_alborache_street_before.webp",
@@ -298,19 +298,19 @@ const PROJECTS = {
     subtitle:
       "34k triangles including cockpit, wheels and steering wheel.",
     images: [
-      { src: "images/dcal_lexus_side.webp", cap: "Top side view" },
+      { src: "images/dcal_lexus_side.webp", cap: "Front view" },
       {
         beforeAfter: true,
         before: "images/dcal_lexus_top-wire.webp",
         after: "images/dcal_lexus_top.webp",
-        cap: "Top · Wireframe",
+        cap: "Front · Wireframe",
       },      
 
       {
         beforeAfter: true,
         before: "images/dcal_lexus_int-wire.webp",
         after: "images/dcal_lexus_int.webp",
-        cap: "Cockpit · Wireframe",
+        cap: "Front · Wireframe",
       },   
       { src: "images/dcal_lexus_UV.webp", cap: "UV map" },
     ],

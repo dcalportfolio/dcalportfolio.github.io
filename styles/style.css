@@ -608,10 +608,18 @@ section {
   flex-shrink: 0
 }
 
+.timeline-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .5rem
+}
+
 .timeline-year {
   font-size: 12px;
   color: var(--ink-mid);
-  letter-spacing: .05em
+  letter-spacing: .05em;
+  white-space: nowrap
 }
 
 .timeline-role {
@@ -619,6 +627,10 @@ section {
   font-weight: 500;
   color: var(--ink);
   margin-top: 2px
+}
+
+.timeline-head .timeline-role {
+  margin-top: 0
 }
 
 .timeline-company {
