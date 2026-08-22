@@ -992,32 +992,10 @@
           src=""
           alt=""
           style="
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
+            max-width: 100vw;
+            max-height: 100dvh;
             object-fit: contain;
             transition: opacity 0.25s;
-            opacity: 0;
-          "
-        />
-        <!-- Second layer used to cross-fade between images: we load the
-             incoming photo here while the outgoing one stays visible on the
-             other layer, then swap opacities. This avoids a Safari/iOS bug
-             where reassigning .src on an already-visible <img> can leave the
-             previous image "stuck" on screen behind the new one. -->
-        <img
-          id="lb-img-b"
-          src=""
-          alt=""
-          style="
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: opacity 0.25s;
-            opacity: 0;
           "
         />
 

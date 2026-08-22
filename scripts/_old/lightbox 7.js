@@ -380,19 +380,11 @@ const PROJECTS = {
 let lbProject = null;
 let lbIndex = 0;
 let lbFadeTimer = null;
-let lbLoadToken = 0;   // guards against out-of-order image loads when navigating fast
-let lbFrontIsA = true; // which of #lb-img / #lb-img-b is currently the visible layer
 // lang variable already declared above
 
 function openLightbox(projectId) {
   lbProject = PROJECTS[projectId];
   lbIndex = 0;
-  lbLoadToken++;
-  lbFrontIsA = true;
-  const lbImg = document.getElementById("lb-img");
-  const lbImgB = document.getElementById("lb-img-b");
-  if (lbImg) lbImg.style.opacity = 0;
-  if (lbImgB) lbImgB.style.opacity = 0;
   document.getElementById("lightbox").style.display = "flex";
   document.body.style.overflow = "hidden";
   renderLightbox();
@@ -413,7 +405,6 @@ function renderLightbox() {
   const img = p.images[lbIndex];
 
   const lbImg = document.getElementById("lb-img");
-  const lbImgB = document.getElementById("lb-img-b");
   let sliderEl = document.getElementById("lb-bas-slider");
 
   // ── TURNTABLE ──────────────────────────────────────────────────────────
@@ -421,7 +412,6 @@ function renderLightbox() {
 
   if (img.turntable) {
     lbImg.style.display = "none";
-    lbImgB.style.display = "none";
     if (sliderEl) sliderEl.style.display = "none";
 
     if (!ttEl) {
@@ -518,7 +508,6 @@ function renderLightbox() {
   let vimeoEl = document.getElementById("lb-vimeo");
 if (img.video) {
   lbImg.style.display = "none";
-  lbImgB.style.display = "none";
   if (sliderEl) sliderEl.style.display = "none";
   if (!vimeoEl) {
     vimeoEl = document.createElement("div");
@@ -537,7 +526,6 @@ if (img.video) {
   if (img.beforeAfter) {
     // Hide normal image, show before-after slider
     lbImg.style.display = "none";
-    lbImgB.style.display = "none";
 
     if (!sliderEl) {
       sliderEl = document.createElement("div");
@@ -698,30 +686,12 @@ if (img.video) {
     setPos(50);
 
   } else {
-    // Normal image — cross-fade between two stacked <img> layers instead of
-    // mutating .src on the currently-visible one. Some mobile browsers (iOS
-    // Safari in particular) can fail to repaint a visible <img> after its
-    // .src changes while opacity is mid-transition, leaving the previous
-    // photo visibly "stuck" behind the new one. Loading the incoming image
-    // into the hidden layer and only revealing it once ready avoids that.
+    // Normal image
     if (sliderEl) sliderEl.style.display = "none";
     lbImg.style.display = "block";
-    lbImgB.style.display = "block";
-
-    const front = lbFrontIsA ? lbImg : lbImgB;
-    const back  = lbFrontIsA ? lbImgB : lbImg;
-
-    const myToken = ++lbLoadToken;
-    const reveal = () => {
-      if (myToken !== lbLoadToken) return; // superseded by a newer navigation
-      back.style.opacity = 1;
-      front.style.opacity = 0;
-      lbFrontIsA = !lbFrontIsA;
-    };
-
-    back.onload = reveal;
-    back.src = img.src;
-    if (back.complete) reveal(); // already cached — onload may not refire
+    lbImg.style.opacity = 0;
+    lbImg.src = img.src;
+    lbImg.onload = () => { lbImg.style.opacity = 1; };
   }
 
   const title = lang === "es" ? p.titleEs : p.titleEn;
