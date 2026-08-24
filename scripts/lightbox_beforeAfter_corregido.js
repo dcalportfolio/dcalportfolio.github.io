@@ -380,7 +380,6 @@ const PROJECTS = {
 let lbProject = null;
 let lbCategory = null;
 let lbIndex = 0;
-let baToken = 0; // guards the before/after auto-wiggle hint against stale renders
 let lbFadeTimer = null;
 let lbLoadToken = 0;   // guards against out-of-order image loads when navigating fast
 let lbFrontIsA = true; // which of #lb-img / #lb-img-b is currently the visible layer
@@ -649,25 +648,11 @@ if (img.video) {
     const leftLabel = isTechCat ? "Wireframe" : (lang === "en" ? "Before" : "Antes");
     const rightLabel = isTechCat ? "Render" : (lang === "en" ? "After" : "Después");
 
-    // "Drag me" hint: a fading text pill plus a couple of gentle auto-slides
-    // of the handle, so first-time visitors immediately recognize this is
-    // an interactive slider and not just a static before/after collage.
-    const baHint = document.createElement("div");
-    baHint.textContent = lang === "en" ? "\u2190 drag to compare \u2192" : "\u2190 desliza para comparar \u2192";
-    baHint.style.cssText = `
-      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
-      background: rgba(0,0,0,0.55); color: #fff;
-      font-size: 12px; font-family: sans-serif; font-weight: 500;
-      padding: 4px 13px; border-radius: 20px; pointer-events: none;
-      opacity: 0; transition: opacity .5s; white-space: nowrap;
-    `;
-
     sliderEl.appendChild(afterImg);
     sliderEl.appendChild(beforeImg);
     sliderEl.appendChild(divider);
     sliderEl.appendChild(mkLabel(leftLabel, "left"));
     sliderEl.appendChild(mkLabel(rightLabel, "right"));
-    sliderEl.appendChild(baHint);
 
     // Once the after image loads, size the before image to match exactly
     const syncSize = () => {
@@ -693,47 +678,8 @@ if (img.video) {
 
     let dragging = false;
 
-    // Auto-wiggle: nudge the handle left then right then back to center
-    // using an eased animation, purely as a visual demo of the gesture.
-    // Cancels the moment the visitor actually touches the slider, or if a
-    // newer render (navigating to another image) has taken over.
-    const myBaToken = ++baToken;
-    let baUserInteracted = false;
-    let baRaf = null;
-
-    const animatePos = (from, to, duration, onDone) => {
-      const start = performance.now();
-      const step = (now) => {
-        if (myBaToken !== baToken || baUserInteracted) return;
-        const t = Math.min(1, (now - start) / duration);
-        const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-        setPos(from + (to - from) * eased);
-        if (t < 1) baRaf = requestAnimationFrame(step);
-        else if (onDone) onDone();
-      };
-      baRaf = requestAnimationFrame(step);
-    };
-
-    const stopHint = () => {
-      baUserInteracted = true;
-      if (baRaf) cancelAnimationFrame(baRaf);
-      baHint.style.opacity = "0";
-    };
-
-    setPos(50);
-    setTimeout(() => {
-      if (myBaToken !== baToken || baUserInteracted) return;
-      baHint.style.opacity = "1";
-      animatePos(50, 30, 550, () => {
-        animatePos(30, 70, 750, () => {
-          animatePos(70, 50, 500);
-        });
-      });
-      setTimeout(() => { if (myBaToken === baToken) baHint.style.opacity = "0"; }, 3400);
-    }, 500);
-
     // Desktop: dragging from anywhere on the image, as before.
-    sliderEl.addEventListener("mousedown",  (e) => { stopHint(); dragging = true; setPos(getPct(e)); });
+    sliderEl.addEventListener("mousedown",  (e) => { dragging = true; setPos(getPct(e)); });
     window.addEventListener("mousemove",    (e) => { if (dragging) setPos(getPct(e)); });
     window.addEventListener("mouseup",      ()  => { dragging = false; });
 
@@ -743,7 +689,6 @@ if (img.video) {
     // cleanly instead of the divider chasing one of the two fingers.
     handleHit.addEventListener("touchstart", (e) => {
       if (e.touches.length !== 1) return;
-      stopHint();
       dragging = true;
       setPos(getPct(e));
     }, { passive: true });
@@ -755,6 +700,8 @@ if (img.video) {
     window.addEventListener("touchend", (e) => {
       if (e.touches.length === 0) dragging = false;
     });
+
+    setPos(50);
 
   } else {
     // Normal image — cross-fade between two stacked <img> layers instead of
