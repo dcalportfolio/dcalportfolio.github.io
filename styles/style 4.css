@@ -496,6 +496,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
+  margin-top: 2rem;
   background: var(--bg);
   border-top: 1px solid var(--border);
   border-left: 1px solid var(--border)
@@ -574,10 +575,6 @@ section {
 
 .about-card-education {
   margin-top: 1.5rem
-}
-
-.about-card-skills {
-  margin-top: 2rem
 }
 
 .about-card-title {
