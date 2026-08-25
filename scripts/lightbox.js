@@ -176,6 +176,7 @@ const PROJECTS = {
         turntable: true,
         framesDir: "images/nismo_turntable/nismo_tt_",  // ← ajusta esta ruta
         frameCount: 24,
+        thumb: "images/360_turntable_icon.webp",  // ← imagen de miniatura, distinta a los frames
         cap: "360° view",
       },      
        
@@ -827,7 +828,7 @@ if (img.video) {
   thumbsEl.innerHTML = "";
   p.images.forEach((im, i) => {
     const t = document.createElement("img");
-    t.src = im.beforeAfter ? im.after : im.src;
+    t.src = im.thumb || (im.beforeAfter ? im.after : im.src);
     t.alt = im.cap;
     t.style.cssText = `height:56px;width:80px;object-fit:cover;cursor:pointer;border:2px solid ${i === lbIndex ? "#C4793A" : "transparent"};opacity:${i === lbIndex ? "1" : "0.55"};transition:all .2s;flex-shrink:0`;
     t.onclick = (e) => {
