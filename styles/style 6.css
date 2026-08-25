@@ -10,19 +10,21 @@
   --fd: 'Bebas Neue', sans-serif;
   --fb: 'DM Sans', sans-serif;
 
-  /* Type scale — body/UI text (3 sizes) */
-  --fs-xs: 12px;   /* all uppercase/tracked micro text: labels, eyebrows, nav & buttons, captions */
-  --fs-sm: 13px;   /* plain component text: timeline, steps, form fields, skill names */
-  --fs-base: 16px; /* body paragraph copy */
+  /* Type scale — body/UI text */
+  --fs-badge: 9px;    /* micro tool-badge letter */
+  --fs-eyebrow: 11px; /* uppercase labels/tags */
+  --fs-caption: 12px; /* small UI/meta text */
+  --fs-body-sm: 13px; /* secondary text & component headings */
+  --fs-body: 15px;    /* base paragraph copy */
+  --fs-lead: 16px;    /* lead/intro paragraph */
 
-  /* Type scale — display (Bebas Neue) headings (4 sizes) */
-  --fs-display-sm: 1.5rem;                  /* footer logo, project title, pill filters */
+  /* Type scale — display (Bebas Neue) headings */
+  --fs-display-xs: 1.2rem;                  /* footer logo */
+  --fs-display-sm: 1.5rem;                  /* project title, pill filters */
   --fs-display-md: 2.2rem;                  /* nav logo, stat numbers */
-  --fs-display-lg: clamp(2.8rem, 5vw, 4.5rem);  /* section titles, process step numerals */
-  --fs-display-hero: clamp(4.5rem, 10vw, 9rem); /* hero title */
-
-  /* Not part of the type scale — these size icon glyphs (×, ‹, ›), not running text */
-  --fs-icon-lg: 1.8rem;
+  --fs-display-numeral: 3.5rem;             /* process step numerals */
+  --fs-display-section: clamp(2.8rem, 5vw, 4.5rem); /* section titles */
+  --fs-display-hero: clamp(4.5rem, 10vw, 9rem)      /* hero title */
 }
 
 *,
@@ -41,30 +43,10 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--fb);
-  font-size: var(--fs-base);
+  font-size: var(--fs-body);
   line-height: 1.7;
   font-weight: 300;
   overflow-x: hidden
-}
-
-/* Shared "label" style: every uppercase, letter-spaced micro-text element
-   (static labels/eyebrows and interactive nav/buttons alike) draws from this
-   single rule instead of each repeating its own font-size/weight/tracking. */
-.nav-links a,
-.lang-btn,
-.filter-btn,
-.hero-cta,
-.form-submit,
-.hero-title-subtle,
-.stat-label,
-.section-label,
-.project-cat,
-.form-label,
-.about-card-title {
-  font-size: var(--fs-xs);
-  font-weight: 500;
-  letter-spacing: .12em;
-  text-transform: uppercase
 }
 
 nav {
@@ -115,6 +97,10 @@ nav {
 }
 
 .nav-links a {
+  font-size: var(--fs-body-sm);
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   transition: color .2s
@@ -132,6 +118,11 @@ nav {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: transparent;
   cursor: pointer;
+  font-family: var(--fb);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
   transition: all .2s
 }
@@ -142,7 +133,7 @@ nav {
 }
 
 .lang-flag {
-  font-size: var(--fs-base);
+  font-size: var(--fs-body);
   line-height: 1
 }
 
@@ -193,6 +184,10 @@ nav {
 
 .hero-title-subtle {
   font-family: var(--fb);
+  font-size: var(--fs-body-sm);
+  font-weight: 400;
+  letter-spacing: .15em;
+  text-transform: uppercase;
   line-height: 1.4;
   color: var(--ink-light);
   margin-bottom: .8rem
@@ -203,7 +198,7 @@ nav {
 }
 
 .hero-desc {
-  font-size: var(--fs-base);
+  font-size: var(--fs-lead);
   color: var(--ink-mid);
   max-width: 480px;
   line-height: 1.8;
@@ -220,6 +215,10 @@ nav {
   background: var(--accent);
   color: #fff;
   text-decoration: none;
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   transition: background .2s, transform .2s;
   opacity: 0;
   animation: fadeUp .8s .65s forwards
@@ -249,6 +248,9 @@ nav {
 }
 
 .stat-label {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: .15em;
+  text-transform: uppercase;
   color: var(--ink-light);
   margin-top: .3rem
 }
@@ -265,7 +267,11 @@ section {
 }
 
 .section-label {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: .2em;
+  text-transform: uppercase;
   color: var(--accent);
+  font-weight: 500;
   white-space: nowrap
 }
 
@@ -277,7 +283,7 @@ section {
 
 .section-title {
   font-family: var(--fd);
-  font-size: var(--fs-display-lg);
+  font-size: var(--fs-display-section);
   line-height: 1;
   letter-spacing: .04em;
   color: var(--ink);
@@ -297,7 +303,11 @@ section {
 
 .filter-btn {
   padding: .45rem 1.1rem;
+  font-size: var(--fs-caption);
   font-family: var(--fb);
+  font-weight: 400;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   border: 1px solid var(--border);
   background: transparent;
   color: var(--ink-mid);
@@ -449,16 +459,20 @@ section {
 }
 
 .project-cat {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: .15em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, .55);
   margin-top: .3rem
 }
 
 .project-sub {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-eyebrow);
   color: rgba(255, 255, 255, .4);
   margin-top: .2rem;
   font-style: italic;
-  letter-spacing: .03em
+  letter-spacing: .03em;
+  text-transform: none
 }
 
 .portfolio-item[data-cat="motorsport"] {
@@ -484,7 +498,7 @@ section {
 .about-text p {
   color: var(--ink-mid);
   margin-bottom: 1.2rem;
-  font-size: var(--fs-base);
+  font-size: var(--fs-body);
   line-height: 1.9
 }
 
@@ -509,14 +523,14 @@ section {
 }
 
 .skill-name {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-body-sm);
   font-weight: 500;
   color: var(--ink);
   margin-bottom: .2rem
 }
 
 .skill-detail {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-caption);
   color: var(--ink-light);
   display: flex;
   flex-wrap: wrap;
@@ -550,7 +564,7 @@ section {
 
 .tool-badge-text {
   font-family: var(--fd);
-  font-size: var(--fs-xs);
+  font-size: var(--fs-badge);
   letter-spacing: 0;
   line-height: 1;
 }
@@ -582,6 +596,9 @@ section {
 }
 
 .about-card-title {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: .2em;
+  text-transform: uppercase;
   color: var(--ink-mid);
   margin-bottom: 2rem
 }
@@ -617,14 +634,14 @@ section {
 }
 
 .timeline-year {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-caption);
   color: var(--ink-mid);
   letter-spacing: .05em;
   white-space: nowrap
 }
 
 .timeline-role {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-body-sm);
   font-weight: 500;
   color: var(--ink);
   margin-top: 2px
@@ -635,7 +652,7 @@ section {
 }
 
 .timeline-company {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-body-sm);
   color: var(--ink-mid)
 }
 
@@ -665,7 +682,7 @@ section {
 
 .step-num {
   font-family: var(--fd);
-  font-size: var(--fs-display-lg);
+  font-size: var(--fs-display-numeral);
   color: var(--border);
   line-height: 1;
   margin-bottom: 1rem;
@@ -673,14 +690,14 @@ section {
 }
 
 .step-title {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-body-sm);
   font-weight: 500;
   color: var(--ink);
   margin-bottom: .5rem
 }
 
 .step-desc {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-body-sm);
   color: var(--ink-mid);
   line-height: 1.7
 }
@@ -698,7 +715,7 @@ section {
 }
 
 .contact-intro {
-  font-size: var(--fs-base);
+  font-size: var(--fs-body);
   color: rgba(255, 255, 255, .5);
   line-height: 1.9;
   margin-bottom: 2.5rem;
@@ -719,6 +736,9 @@ section {
 }
 
 .form-label {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: .15em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, .35)
 }
 
@@ -727,7 +747,7 @@ section {
   border: 1px solid rgba(255, 255, 255, .1);
   padding: .85rem 1rem;
   font-family: var(--fb);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-body-sm);
   color: #fff;
   outline: none;
   transition: border-color .2s;
@@ -750,6 +770,10 @@ section {
   color: #fff;
   border: none;
   font-family: var(--fb);
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   cursor: pointer;
   transition: background .2s, transform .2s;
   align-self: flex-start
@@ -772,7 +796,7 @@ footer {
 
 .footer-logo {
   font-family: var(--fd);
-  font-size: var(--fs-display-sm);
+  font-size: var(--fs-display-xs);
   letter-spacing: .08em;
   color: rgba(255, 255, 255, .3);
   display: flex;
@@ -781,7 +805,7 @@ footer {
 }
 
 .footer-copy {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-caption);
   color: rgba(255, 255, 255, .2)
 }
 
@@ -834,6 +858,10 @@ footer {
   .hero-stats {
     gap: 1.8rem;
     flex-wrap: wrap
+  }
+
+  .stat-num {
+    font-size: 1.9rem
   }
 
   .portfolio-item {

@@ -449,14 +449,14 @@ function renderLightbox() {
         <div style="width:140px;height:2px;background:#333;border-radius:2px;overflow:hidden;">
           <div id="tt-fill" style="height:100%;width:0%;background:#fff;transition:width .1s;"></div>
         </div>
-        <span style="font-size:var(--fs-xs);letter-spacing:.08em;color:#666;font-family:sans-serif;">cargando frames…</span>
+        <span style="font-size:11px;letter-spacing:.08em;color:#666;font-family:sans-serif;">cargando frames…</span>
       </div>
       <img id="tt-frame" draggable="false" alt="Vista 360°" style="
         max-width:100%;max-height:100%;
         object-fit:contain;display:block;pointer-events:none;border-radius:8px;"/>
       <div id="tt-hint" style="position:absolute;bottom:12px;left:50%;
         transform:translateX(-50%);background:rgba(0,0,0,.55);color:#fff;
-        font-size:var(--fs-xs);font-family:sans-serif;padding:4px 13px;border-radius:20px;
+        font-size:11px;font-family:sans-serif;padding:4px 13px;border-radius:20px;
         pointer-events:none;opacity:0;transition:opacity .5s;white-space:nowrap;">
         ← arrastra para girar →</div>
     `;
@@ -640,7 +640,7 @@ if (img.video) {
       el.style.cssText = `
         position: absolute; top: 12px; ${side}: 12px;
         background: rgba(0,0,0,0.5); color: #fff;
-        font-size: var(--fs-xs); font-family: sans-serif;
+        font-size: 12px; font-family: sans-serif;
         padding: 3px 10px; border-radius: 20px; pointer-events: none;
       `;
       return el;
@@ -658,7 +658,7 @@ if (img.video) {
     baHint.style.cssText = `
       position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
       background: rgba(0,0,0,0.55); color: #fff;
-      font-size: var(--fs-xs); font-family: sans-serif; font-weight: 500;
+      font-size: 12px; font-family: sans-serif; font-weight: 500;
       padding: 4px 13px; border-radius: 20px; pointer-events: none;
       opacity: 0; transition: opacity .5s; white-space: nowrap;
     `;
