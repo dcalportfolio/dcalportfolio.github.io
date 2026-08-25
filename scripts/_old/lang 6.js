@@ -104,16 +104,10 @@ function updatePortfolioArrows() {
   const grid = document.getElementById('portfolio-grid');
   const left = document.getElementById('portfolio-arrow-left');
   const right = document.getElementById('portfolio-arrow-right');
-  const fadeLeft = document.getElementById('portfolio-fade-left');
-  const fadeRight = document.getElementById('portfolio-fade-right');
-  if (!grid) return;
+  if (!grid || !left || !right) return;
   const maxScroll = grid.scrollWidth - grid.clientWidth;
-  const showLeft = grid.scrollLeft > 8;
-  const showRight = maxScroll > 8 && grid.scrollLeft < maxScroll - 8;
-  if (left) left.classList.toggle('is-visible', showLeft);
-  if (right) right.classList.toggle('is-visible', showRight);
-  if (fadeLeft) fadeLeft.classList.toggle('is-visible', showLeft);
-  if (fadeRight) fadeRight.classList.toggle('is-visible', showRight);
+  left.classList.toggle('is-visible', grid.scrollLeft > 8);
+  right.classList.toggle('is-visible', maxScroll > 8 && grid.scrollLeft < maxScroll - 8);
 }
 
 function scrollPortfolio(dir) {
@@ -127,7 +121,6 @@ function scrollPortfolio(dir) {
   if (!grid) return;
   grid.addEventListener('scroll', updatePortfolioArrows);
   window.addEventListener('resize', updatePortfolioArrows);
-  updatePortfolioArrows();
 })();
 window.addEventListener('scroll', () => {
   document.querySelector('nav').style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.4)' : 'none';
