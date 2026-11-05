@@ -211,6 +211,32 @@ const PROJECTS = {
       },
     ],
   },
+  archviz_UrbanRenov: {
+    titleEn: "Urban renovation",
+    titleEs: "Renovación urbana",
+    subtitle:
+      "Urban renovation of one street and two squares at La Pobla de Vallbona, Valencia (Spain)",
+    subtitleEs:
+      "Renovación urbana de una calle y dos plazas en La Pobla de Vallbona, Valencia (España)",
+    images: [
+      { src: "images/dcal_avcolom_plaza_14_A.webp", cap: "Square · Aerial view A" },
+      { src: "images/dcal_avcolom_plaza_14_B.webp", cap: "Square · Aerial view B" },
+      { src: "images/dcal_avcolom_casa_cultura_12.webp", cap: "Casa de la Cultura square" },
+      { src: "images/dcal_avcolom_sanvicente_01.webp", cap: "San Vicente area" },
+      { src: "images/dcal_avcolom_vista04_02.webp", cap: "Street view" },
+    ],
+  },
+  archviz_RingRoad: {
+    titleEn: "Ring road previsualization",
+    titleEs: "Previsualización de circunvalación",
+    subtitle: "Ring road around Elche (Spain) previsualization",
+    subtitleEs: "Previsualización de la ronda de circunvalación de Elche (España)",
+    images: [
+      { src: "images/dcal_elche_hospital__08.webp", cap: "Aerial view · Hospital area" },
+      { src: "images/dcal_elche_pov_golf_02.webp", cap: "Road view · Golf area" },
+      { src: "images/dcal_elche_glorieta_11_.webp", cap: "Roundabout approach" },
+    ],
+  },
   motorsport_STC: {
     titleEn: "STC 2000 2019",
     titleEs: "STC 2000 2019",
@@ -796,8 +822,9 @@ if (img.video) {
 
   clearTimeout(lbFadeTimer);
 
-  subText.textContent = p.subtitle || "";
-  subOverlay.style.display = p.subtitle ? "block" : "none";
+  const subtitle = lang === "es" && p.subtitleEs ? p.subtitleEs : p.subtitle;
+  subText.textContent = subtitle || "";
+  subOverlay.style.display = subtitle ? "block" : "none";
 
   capText.textContent = img.cap || "";
   capOverlay.style.display = img.cap ? "block" : "none";

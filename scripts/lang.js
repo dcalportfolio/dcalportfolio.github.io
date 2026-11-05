@@ -69,6 +69,11 @@ function applyLang(l) {
     const item = el.closest('.portfolio-item');
     if (item) { const title = l === 'en' ? item.dataset.titleEn : item.dataset.titleEs; if (title) el.textContent = title; }
   });
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    const sub = item.querySelector('.project-sub');
+    const text = l === 'en' ? item.dataset.subEn : item.dataset.subEs;
+    if (sub && text) sub.textContent = text;
+  });
   document.documentElement.lang = l;
 }
 function toggleLang() {
