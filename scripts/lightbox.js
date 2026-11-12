@@ -1,3 +1,13 @@
+// Thumbnail for splat items: a small inline SVG tile, so no extra image file is needed.
+const SPLAT_THUMB =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="160" height="112" viewBox="0 0 160 112">' +
+      '<rect width="160" height="112" fill="#1a1a1a"/>' +
+      '<text x="80" y="64" text-anchor="middle" font-family="sans-serif" ' +
+      'font-size="32" font-weight="700" fill="#C4793A">3D</text></svg>'
+  );
+
 const PROJECTS = {
   archviz_Overpass: {
     titleEn: "Overpass Renders",
@@ -315,6 +325,13 @@ const PROJECTS = {
 
       { src: "images/dcal_indycar-2-8-render-wire-01.webp", cap: "Wireframe rear" },
       { src: "images/dcal_indycar-sw.webp", cap: "Indycar Steering Wheel" },
+      {
+        splat: "https://superspl.at/s?id=f7acc0b3",
+        poster: "images/dcal_indycar_street_01.webp", // backdrop behind the "load" button
+        thumb: SPLAT_THUMB,
+        cap: "3D view · Gaussian splat",
+        capEs: "Vista 3D · Gaussian splat",
+      },
 
     ],
   },
@@ -429,6 +446,7 @@ function openLightbox(projectId) {
 }
 
 function closeLightbox() {
+  destroySplat();
   document.getElementById("lightbox").style.display = "none";
   document.body.style.overflow = "";
   clearTimeout(lbFadeTimer);
@@ -436,6 +454,94 @@ function closeLightbox() {
 
 function closeLightboxIfBg(e) {
   if (e.target === document.getElementById("lightbox")) closeLightbox();
+}
+
+// ── SPLAT (Gaussian splat embedded from superspl.at) ──────────────────────
+// The iframe is created only when the visitor clicks the "load" button and is
+// destroyed when they navigate to another item or close the lightbox, so the
+// 3D scene never loads (nor keeps using the GPU) unless it is being looked at.
+// sandbox blocks the embed from navigating your page. If the viewer ever fails
+// to load, remove the sandbox line below first.
+const SPLAT_SANDBOX = "allow-scripts allow-same-origin allow-popups allow-pointer-lock";
+
+function splatText(key) {
+  return (T[lang] && T[lang][key]) || "";
+}
+
+function destroySplat() {
+  const el = document.getElementById("lb-splat");
+  if (!el) return;
+  el.innerHTML = ""; // removing the iframe stops the viewer and frees the GPU
+  el.style.display = "none";
+}
+
+function renderSplat(img) {
+  const anchor = document.getElementById("lb-img");
+  let el = document.getElementById("lb-splat");
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "lb-splat";
+    anchor.parentNode.insertBefore(el, anchor);
+  }
+  el.style.cssText = `
+    display:flex;align-items:center;justify-content:center;
+    position:relative;max-width:100%;max-height:100%;
+    aspect-ratio:16/10;width:min(900px,92vw);
+    border-radius:8px;overflow:hidden;background:#111;
+  `;
+  el.innerHTML = "";
+
+  if (img.poster) {
+    const poster = document.createElement("img");
+    poster.src = img.poster;
+    poster.alt = "";
+    poster.draggable = false;
+    poster.style.cssText =
+      "position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;pointer-events:none;";
+    el.appendChild(poster);
+  }
+
+  const box = document.createElement("div");
+  box.style.cssText =
+    "position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:16px;";
+
+  // The ids below match keys in lang.js (T), so applyLang() also translates
+  // them live if the visitor switches language while the lightbox is open.
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.style.cssText = `
+    cursor:pointer;border:1px solid #C4793A;background:rgba(0,0,0,.6);color:#fff;
+    font-family:sans-serif;font-size:var(--fs-sm, 14px);letter-spacing:.04em;
+    padding:12px 22px;border-radius:30px;
+  `;
+  btn.appendChild(document.createTextNode("\u25B6\uFE0E "));
+  const label = document.createElement("span");
+  label.id = "lb-splat-load";
+  label.textContent = splatText("lb-splat-load");
+  btn.appendChild(label);
+
+  const note = document.createElement("span");
+  note.id = "lb-splat-note";
+  note.textContent = splatText("lb-splat-note");
+  note.style.cssText = "color:#aaa;font-family:sans-serif;font-size:var(--fs-xs);";
+
+  btn.onclick = (e) => {
+    e.stopPropagation();
+    const title = lang === "es" && img.capEs ? img.capEs : img.cap;
+    el.innerHTML = "";
+    const f = document.createElement("iframe");
+    f.src = img.splat;
+    f.title = title || "Gaussian splat";
+    f.setAttribute("allow", "fullscreen; xr-spatial-tracking");
+    f.setAttribute("sandbox", SPLAT_SANDBOX);
+    f.setAttribute("allowfullscreen", "");
+    f.style.cssText = "width:100%;height:100%;border:0;display:block;";
+    el.appendChild(f);
+  };
+
+  box.appendChild(btn);
+  box.appendChild(note);
+  el.appendChild(box);
 }
 
 function renderLightbox() {
@@ -564,7 +670,20 @@ if (img.video) {
 } else {
   if (vimeoEl) vimeoEl.style.display = "none";
 }
-  if (img.beforeAfter) {
+
+  // ── SPLAT ──────────────────────────────────────────────────────────────
+  if (img.splat) {
+    lbImg.style.display = "none";
+    lbImgB.style.display = "none";
+    if (sliderEl) sliderEl.style.display = "none";
+    renderSplat(img);
+  } else {
+    destroySplat();
+  }
+
+  if (img.splat) {
+    // handled above — skip the normal image / before-after branches
+  } else if (img.beforeAfter) {
     // Hide normal image, show before-after slider
     lbImg.style.display = "none";
     lbImgB.style.display = "none";
@@ -826,8 +945,14 @@ if (img.video) {
   subText.textContent = subtitle || "";
   subOverlay.style.display = subtitle ? "block" : "none";
 
-  capText.textContent = img.cap || "";
-  capOverlay.style.display = img.cap ? "block" : "none";
+  const capStr = lang === "es" && img.capEs ? img.capEs : img.cap;
+  capText.textContent = capStr || "";
+  capOverlay.style.display = capStr ? "block" : "none";
+
+  // Overlays are text only: never let them intercept clicks meant for the splat viewer
+  [subOverlay, capOverlay].forEach((el) => {
+    el.style.pointerEvents = img.splat ? "none" : "";
+  });
 
   // Show instantly (no transition), then force a reflow so the fade-out
   // transition applies cleanly to the next opacity change.

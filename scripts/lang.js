@@ -25,7 +25,9 @@ const T = {
     'contact-label': 'Contact', 'contact-title': 'Let\u2019s talk about your project',
     'contact-intro': 'Do you have an archviz, simulation or motorsport project that needs to come to life? I\u2019m available for new projects and open to joining a team.',
     'fl-name': 'Name', 'fi-name-ph': 'Your name', 'fl-project': 'Project', 'fi-project-ph': 'Tell me about your project...',
-    'form-submit': 'Send message \u2192', 'footer-copy': '\u00a9 2026 Daniel Cal \u2014 3D Generalist'
+    'form-submit': 'Send message \u2192', 'footer-copy': '\u00a9 2026 Daniel Cal \u2014 3D Generalist',
+    'lb-splat-load': 'Load interactive 3D view',
+    'lb-splat-note': 'Gaussian splat \u00b7 loads the viewer from superspl.at'
   },
   es: {
     'nav-portfolio': 'Portfolio', 'nav-about': 'Sobre m\u00ed', 'nav-process': 'Proceso', 'nav-contact': 'Contacto',
@@ -53,7 +55,9 @@ const T = {
     'contact-label': 'Contacto', 'contact-title': 'Hablemos de tu proyecto',
     'contact-intro': '\u00bfTienes un proyecto de archviz, simulaci\u00f3n o motorsport que necesita cobrar vida? Estoy disponible para nuevos proyectos y abierto a incorporarme a equipo.',
     'fl-name': 'Nombre', 'fi-name-ph': 'Tu nombre', 'fl-project': 'Proyecto', 'fi-project-ph': 'Cu\u00e9ntame en qu\u00e9 puedo ayudarte...',
-    'form-submit': 'Enviar mensaje \u2192', 'footer-copy': '\u00a9 2026 Daniel Cal \u2014 Generalista 3D'
+    'form-submit': 'Enviar mensaje \u2192', 'footer-copy': '\u00a9 2026 Daniel Cal \u2014 Generalista 3D',
+    'lb-splat-load': 'Cargar vista 3D interactiva',
+    'lb-splat-note': 'Gaussian splat \u00b7 carga el visor desde superspl.at'
   }
 };
 let lang = 'en';
