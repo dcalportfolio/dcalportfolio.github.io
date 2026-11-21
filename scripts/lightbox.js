@@ -326,8 +326,8 @@ const PROJECTS = {
       { src: "images/dcal_indycar-2-8-render-wire-01.webp", cap: "Wireframe rear" },
       { src: "images/dcal_indycar-sw.webp", cap: "Indycar Steering Wheel" },
       {
-        splat: "https://superspl.at/s?id=f7acc0b3",
-        poster: "images/dcal_indycar_street_01.webp", // backdrop behind the "load" button
+        splat: "https://superspl.at/s?id=203e1e62",
+        poster: "images/dcal_indycar_street_03.webp", // backdrop behind the "load" button
         thumb: SPLAT_THUMB,
         cap: "3D view · Gaussian splat",
         capEs: "Vista 3D · Gaussian splat",
